@@ -1,0 +1,2913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111a27"><meta name="description" content="Aprenda a acompanhar cada giro do cubo mágico 3×3, com fotos das faces, gráfico de bolinhas e tutoria animada.">
+<title>Cubo em Movimento · Máscaras de Tutoria</title>
+<style>
+:root{--paper:#f3f2ed;--card:#fffefa;--ink:#172436;--muted:#657181;--line:#dce1e3;--orange:#ed872f;--accent:#224f45;--dark:#111a27;--radius:22px;--shadow:0 10px 32px #17243608;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button,select{cursor:pointer}button{border:0}button:disabled{opacity:.44;cursor:not-allowed}button:focus-visible,a:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid #277dba;outline-offset:4px}a{color:#235b4d}button svg{width:20px;height:20px;vertical-align:middle;flex-shrink:0}svg{display:block;max-width:100%}p{margin:0 0 12px}h1,h2,h3{line-height:1.15;letter-spacing:-.035em;margin:0}h1{font-size:clamp(32px,4.3vw,53px);font-weight:750}h2{font-size:26px}h3{font-size:20px}small,.small{font-size:13px;line-height:1.5}label{font-size:14px;font-weight:650}select{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:10px 12px;max-width:100%;color:var(--ink)}[hidden]{display:none!important}.muted{color:var(--muted)}.eyebrow{font-size:11px;font-weight:750;letter-spacing:.16em;text-transform:uppercase}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.gap{margin-top:18px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:13px 20px;border-radius:12px;font-weight:700;line-height:1.25;min-height:48px;background:var(--ink);color:#fff;text-decoration:none}.btn.primary{background:var(--accent)}.btn.orange{background:#ffb86d;color:#242730}.btn.secondary{background:#e9eeea;color:#234a40}.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn.sm{padding:9px 13px;min-height:40px;font-size:13px}.linkbtn{background:transparent;text-decoration:underline;color:var(--accent);padding:10px 4px;font-size:13px}.full{width:100%}.badge{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;background:#e6eee8;border-radius:99px;color:#315e4d;font-size:11px;font-weight:700;letter-spacing:.02em}.badge.dark{color:#c5d5e6;background:#273447}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:18px}.card-head p{margin:6px 0 0;font-size:14px;color:var(--muted)}.notice{border-radius:14px;padding:14px 16px;background:#eef2e8;color:#324a3d;font-size:14px}.notice.warn{background:#fff2db;color:#6d4b1c}.notice.error{background:#fff0ed;color:#9b392c}.notice ul{padding-left:20px;margin:8px 0 0}.notice strong{font-weight:750}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:1000;width:max-content;max-width:calc(100vw - 32px);padding:14px 20px;border-radius:14px;background:#182a27;color:#fff;box-shadow:0 10px 40px #0003;font-size:14px}.skip{position:absolute;top:-80px;background:#fff;padding:10px;z-index:200}.skip:focus{top:4px}header{max-width:1230px;margin:auto;padding:22px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;gap:12px;align-items:center}.brand-mark{width:44px;height:44px;background:var(--ink);border-radius:13px;display:grid;place-items:center}.brand-mark svg{width:29px;height:29px}.brand-name{font-weight:800;letter-spacing:-.04em;font-size:20px}.brand-sub{font-size:11px;color:var(--muted);letter-spacing:.05em}.shell{max-width:1230px;margin:auto;padding:0 28px 50px}.hero{display:grid;grid-template-columns:1fr auto;gap:36px;padding:30px 0 31px;align-items:center}.hero .eyebrow{color:var(--accent);margin-bottom:14px}.hero-copy{max-width:760px}.hero-copy p{max-width:625px;font-size:16px;color:var(--muted);margin-top:15px}.hero-motif{width:160px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;transform:rotate(-7deg)}.hero-motif i{height:38px;border-radius:12px;background:#d8e1d5}.hero-motif i:nth-child(2){background:#ffdd65}.hero-motif i:nth-child(3){background:#f05f69}.hero-motif i:nth-child(4){background:#62b893}.hero-motif i:nth-child(5){background:#1f493e}.hero-motif i:nth-child(6){background:#e39953}.hero-motif i:nth-child(7){background:#5d8cbf}.hero-motif i:nth-child(8){background:#fdfcf4}.tabs{display:flex;gap:7px;margin-bottom:22px;background:var(--paper);position:sticky;top:0;z-index:30;padding:12px 0;border-bottom:1px solid #cbd5d980}.tab{display:flex;align-items:center;gap:9px;padding:12px 20px;background:transparent;color:var(--muted);border-radius:12px;font-weight:650;white-space:nowrap}.tab.active{background:var(--ink);color:#fff}.tab-num{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#ffffff19;border:1px solid #64748b70;font-size:12px}.capture-layout{display:grid;grid-template-columns:1.16fr 1fr;gap:20px}.photo-wrap{position:relative;border-radius:16px;overflow:hidden;background:#e8ebe8;min-height:260px;display:flex;align-items:center;justify-content:center}.photo-empty{text-align:center;padding:36px 24px;max-width:400px}.photo-empty svg{width:54px;height:54px;margin:0 auto 15px;color:#59756d}.photo-empty p{font-size:14px;color:var(--muted)}#photoCanvas{width:100%;height:auto;touch-action:none;max-height:540px;object-fit:contain}#cameraVideo{width:100%;max-height:470px;object-fit:contain;background:#101823}.camera-guide{position:absolute;left:20%;right:20%;top:20%;bottom:20%;border:2px solid #fff;border-radius:5px;pointer-events:none;background:linear-gradient(90deg,transparent 32.7%,#fff8 33%,transparent 33.3%,transparent 66%,#fff8 66.3%,transparent 66.6%),linear-gradient(transparent 32.7%,#fff8 33%,transparent 33.3%,transparent 66%,#fff8 66.3%,transparent 66.6%)}.camera-actions{margin-top:12px}.orientation{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:16px 0}.anchor{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12px}.anchor .dot{width:23px;height:23px;flex-shrink:0;border-radius:50%;border:1px solid #0002}.anchor strong{display:block;font-size:13px}.photo-help{margin:13px 0;font-size:13px}.face-tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:20px 0}.face-tab{background:#f2f4ef;border:1px solid var(--line);border-radius:12px;padding:9px 4px;text-align:center}.face-tab.active{outline:2px solid #315e4d;border-color:transparent}.face-tab .color-dot{width:24px;height:24px;margin:0 auto 5px;border-radius:7px;border:1px solid #0002}.face-tab strong{display:block;font-size:13px}.face-tab small{font-size:10px}.face-tab.complete small{color:#286649}.face-editor{width:min(100%,288px);margin:20px auto;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.sticker{aspect-ratio:1;border-radius:15px;background:#e4e8e5;border:2px solid #17362620;position:relative;box-shadow:inset 0 -3px 0 #0000000c;display:flex;align-items:center;justify-content:center;min-height:58px}.sticker .num{position:absolute;left:7px;top:4px;font-size:10px;opacity:.75}.sticker .symbol{font-weight:800;font-size:19px;letter-spacing:-.05em}.sticker.center{cursor:default;border:3px double #17243677}.sticker.uncertain:after{content:'?';position:absolute;bottom:3px;right:6px;color:#9b392c;font-size:16px;font-weight:900;background:#fff9;border-radius:50%;width:20px}.palette{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.color-button{display:flex;align-items:center;gap:7px;justify-content:flex-start;border:1px solid var(--line);border-radius:11px;padding:9px;font-size:12px;background:#fffefa;min-height:44px}.color-button[aria-pressed="true"]{outline:2px solid #234f42;border-color:transparent}.color-swatch{width:19px;height:19px;border-radius:50%;border:1px solid #0002;flex-shrink:0}.count-bad{color:#a13021;font-weight:800}.count-good{color:#356948}.scheme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}.scheme-grid select{width:100%;font-size:13px}.scheme-grid label{font-size:12px}details{border-top:1px solid var(--line);padding-top:13px;margin-top:18px}summary{cursor:pointer;font-weight:650;font-size:14px}details p{font-size:13px;margin-top:10px}.capture-complete{grid-column:1/-1}.solve-empty{text-align:center;padding:50px 28px}.solve-empty p{max-width:550px;margin:15px auto 22px}.progress-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:10px}.progress{height:6px;border-radius:9px;background:#dce3de;overflow:hidden;margin-bottom:20px}.progress span{height:100%;display:block;background:var(--accent);transition:width .2s}.solve-controls{display:flex;gap:15px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}.select-group{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.select-group label{font-size:12px}.select-group select{font-size:13px;padding:8px 10px}.solve-layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr);gap:20px;align-items:start}.graph-card{background:var(--dark);color:#fff;border-color:var(--dark);padding:18px}.graph-top{display:flex;justify-content:space-between;align-items:center;margin:3px 6px 10px;gap:12px}.graph-top h3{font-size:18px;color:#e4edf8;letter-spacing:-.03em}.graph-top span{color:#94a4b8;font-size:11px}.graph-svg{width:100%;border-radius:17px}.graph-caption{padding:9px 8px 2px;color:#b4c2d2;font-size:12px;min-height:46px}.cube-card{background:#e8eee7;border-radius:18px;border:1px solid #dce4da;overflow:hidden;padding:12px}.cube-card>svg{width:100%;max-height:350px}.cube-view{display:flex;gap:9px;align-items:center;justify-content:center;font-size:11px;margin-bottom:7px}.cube-view select{font-size:11px;padding:6px 9px;background:#f9fbf4}.reference-line{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;font-size:12px;margin:12px 0}.reference-line i{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;border:1px solid #0003;margin-right:4px}.next-card{margin-top:16px;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:22px}.move-top{display:flex;gap:18px;align-items:center}.move-token{width:74px;height:74px;display:grid;place-items:center;border-radius:17px;background:#ffe6bd;color:#784014;font-weight:650;font-size:36px;font-family:Georgia,serif;flex-shrink:0}.move-copy .eyebrow{color:var(--muted);margin-bottom:5px}.move-copy h3{font-size:23px}.move-copy p{font-size:14px;margin:6px 0 0}.direction{display:flex;gap:12px;align-items:center;border-radius:13px;background:#f0f3eb;padding:12px 14px;margin:16px 0;font-size:14px}.turn-icon{width:44px;height:44px;flex-shrink:0;display:grid;place-items:center;font-size:31px;color:#285849}.hints{display:grid;gap:8px;font-size:13px;margin:13px 0}.hint-row{display:flex;gap:10px;align-items:flex-start;color:#4a5a50}.hint-row b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;background:#dde8df;color:#2d5d46;font-size:11px}.hint-row span{padding-top:1px}.confirm-area{display:grid;gap:9px}.animation-tools{display:flex;gap:8px;margin:14px 0}.animation-tools>.btn{flex:1;font-size:13px;padding:12px 8px}.preview-note{color:#80601e;background:#fff2d7;border-radius:11px;padding:10px 12px;font-size:12px;margin-bottom:12px}.sequence{display:flex;gap:6px;flex-wrap:wrap;margin-top:13px}.seq{background:#e9eee7;border-radius:6px;padding:5px 8px;font:12px ui-monospace,monospace;color:#738174}.seq.done{background:#d6e5da;color:#426749}.seq.current{background:#ffcc93;color:#74451e;outline:1px solid #bd7d36}.complete-card{padding:22px;text-align:center;background:#e1efe3;border-radius:18px;margin-top:16px}.complete-card .done-icon{width:62px;height:62px;margin:0 auto 12px;display:grid;place-items:center;background:#2d6450;color:#fff;border-radius:50%;font-size:33px}.complete-card p{font-size:14px;margin-top:13px}.net{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:600px;margin:20px auto}.net-face span{font-size:10px;color:#adbccc}.net-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:3px}.net-grid span{aspect-ratio:1;border-radius:4px;display:grid;place-items:center;color:#172436;font-size:10px;font-weight:750;border:1px solid #0002}.graph-card details{border-color:#344156}.graph-card summary{color:#dbe6f4}.learn-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:20px}.lesson-list{display:grid;gap:9px;margin:18px 0}.lesson-item{display:flex;align-items:flex-start;gap:12px;padding:15px;border:1px solid var(--line);border-radius:13px}.lesson-item b{width:25px;height:25px;border-radius:8px;background:#e5eee4;display:grid;place-items:center;color:#315e4d;flex-shrink:0;font-size:12px}.lesson-item p{font-size:14px;margin:0}.lesson-item strong{display:block;margin-bottom:3px}.lesson-selector{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:16px 0}.lesson-face{min-height:44px;background:#eef2e9;border:1px solid var(--line);border-radius:9px;font-weight:750}.lesson-face.active{background:#224f45;color:#fff}.learn-demo{grid-column:1/-1;background:var(--dark);color:#dbe5f2;display:grid;grid-template-columns:1.2fr 1fr;gap:24px;padding:22px;border-radius:22px}.learn-demo .cube-card{background:#dfe7dc}.learn-demo-text{font-size:13px;color:#bacadd}.learn-demo-text strong{color:#fff}.learn-turns{margin-top:14px}.quiz{border:1px solid var(--line);border-radius:15px;padding:17px;margin:14px 0}.quiz p{font-size:14px;font-weight:650}.quiz-options{display:flex;gap:8px;flex-wrap:wrap}.quiz-options button{border:1px solid var(--line);border-radius:9px;background:#eef1e9;padding:10px 13px;font-size:13px}.quiz-options button.correct{background:#dceede;border-color:#559064}.quiz-options button.wrong{background:#fff0e9;border-color:#d8a386}.feedback{margin-top:10px;font-size:13px;color:#305844}.loading{background:#fffefa;border:1px solid var(--line);border-radius:22px;padding:36px;text-align:center}.spinner{width:38px;height:38px;border:3px solid #dbe7dc;border-top-color:#2e614f;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 17px}@keyframes spin{to{transform:rotate(360deg)}}.loader-progress{height:6px;background:#e1e7df;border-radius:8px;margin:18px auto;max-width:400px;overflow:hidden}.loader-progress span{display:block;height:100%;background:#2d6450;transition:width .3s}footer{text-align:center;color:var(--muted);font-size:12px;max-width:1230px;margin:auto;padding:18px 28px 30px;border-top:1px solid var(--line)}dialog{border:0;max-width:610px;width:calc(100vw - 30px);border-radius:23px;padding:27px;background:var(--card);color:var(--ink);box-shadow:0 22px 70px #0004}dialog::backdrop{background:#101a27a0;backdrop-filter:blur(3px)}dialog h2{font-size:25px;margin-bottom:14px}dialog p{font-size:14px}dialog pre{white-space:pre-wrap;font-size:10px;max-height:180px;overflow:auto;padding:14px;background:#edf0e8;border-radius:12px}dialog form{margin-top:22px;display:flex;justify-content:flex-end;gap:10px}.icon-only{min-width:44px}.resume{margin-bottom:20px}.face-guide-big{font-size:12px}.scan-done{margin-top:12px}.help-box{background:#e9f0e6;border-left:3px solid #528465;padding:12px 15px;border-radius:0 12px 12px 0;font-size:13px}.about-list{padding-left:22px;font-size:14px}.about-list li{margin:8px 0}.learn-mobile-title{margin:0 0 12px;font-size:14px}.status-strip{font-size:13px;margin:15px 0 0}.no-js{background:#fff0e8;padding:30px;text-align:center}.tab-panel{scroll-margin-top:95px}
+@media(max-width:900px){.hero-motif{width:123px;gap:6px}.hero-motif i{height:31px;border-radius:8px}.capture-layout{grid-template-columns:1fr 1fr}.card{padding:20px}.solve-layout{gap:15px}.move-top{gap:12px}.move-token{width:60px;height:60px;font-size:29px}.move-copy h3{font-size:20px}.next-card{padding:17px}.tab{padding:11px 16px}}
+@media(max-width:690px){header{padding:18px 18px 10px}.shell{padding:0 15px 32px}.brand-name{font-size:18px}.brand-sub{font-size:9px}.brand-mark{width:39px;height:39px}.hero{padding:25px 4px 20px;grid-template-columns:1fr;gap:18px}.hero-motif{display:none}.hero-copy p{font-size:14px;margin-top:12px}.hero .btn{font-size:13px;padding:12px 14px}.hero .eyebrow{font-size:10px}.tabs{gap:4px;margin-bottom:16px;justify-content:space-between}.tab{justify-content:center;gap:6px;padding:11px 8px;font-size:12px;flex:1}.tab-num{width:21px;height:21px;font-size:11px}.capture-layout,.solve-layout,.learn-grid{grid-template-columns:1fr}.card{padding:19px;border-radius:18px}.card-head{margin-bottom:15px}.card-head h2{font-size:23px}.capture-complete{grid-column:auto}.photo-wrap{min-height:225px}.face-tabs{margin:16px 0}.face-tab{border-radius:9px}.palette{grid-template-columns:repeat(3,1fr)}.face-editor{max-width:268px}.graph-card{padding:12px}.graph-caption{padding:10px 8px 4px;font-size:12px}.graph-top{margin:4px 7px 8px}.solve-controls{gap:10px;align-items:flex-start}.select-group{gap:6px}.select-group label{font-size:11px}.select-group select{font-size:12px}.cube-card>svg{max-height:305px}.next-card{padding:19px}.move-token{width:66px;height:66px;font-size:32px}.move-copy h3{font-size:22px}.progress-head{font-size:13px}.progress-head h2{font-size:23px}.learn-demo{grid-template-columns:1fr;gap:20px;padding:15px}.learn-demo .cube-card{max-width:450px}.scheme-grid{grid-template-columns:repeat(2,1fr)}.net{gap:5px}.net-face span{font-size:9px}.btn.full{padding:14px 12px}.photo-help{font-size:12px}.camera-actions .btn{font-size:12px;padding:10px 12px}.capture-complete .row .btn{width:100%}.complete-card{margin-bottom:20px}footer{font-size:11px;padding:18px 18px 26px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.spinner{animation-duration:2s}.progress span,.loader-progress span{transition:none}}
+@media(max-width:390px){header{gap:8px;padding:16px 14px 8px}.brand{gap:9px}.brand-mark{width:34px;height:34px}.brand-name{font-size:16px}.brand-sub{font-size:8px}.tab{font-size:11px;white-space:normal;line-height:1.2;min-width:0;padding:10px 6px}.tab-num{flex-shrink:0;width:19px;height:19px}.palette{grid-template-columns:repeat(2,1fr)}.face-tab{min-width:0}.face-tab small{font-size:8px}.select-group{width:100%}.select-group select{max-width:185px}}
+</style>
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 6h5l2-3h4l2 3h5v14H3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M4 15v6h16v-6M12 17V3m-5 5 5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8Z" fill="currentColor"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="m9 5-6 6 6 6m-5-6h10a7 7 0 0 1 7 7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+<a class="skip" href="#main">Ir para o aplicativo</a>
+<header><div class="brand"><div class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 2 13 7v14l-13 7L3 23V9Z" fill="#487b65"/><path d="m16 3 12 7-12 7L4 10Z" fill="#ffce5c"/><path d="m17 18 11-6v10l-11 6Z" fill="#ee8650"/><path d="m5 12 10 6v10L5 22Z" fill="#68b79b"/></svg></div><div><div class="brand-name">Cubo em Movimento</div><div class="brand-sub">MÁSCARAS DE TUTORIA · CUBO 3×3</div></div></div><button id="aboutBtn" class="btn ghost sm" type="button">Sobre</button></header>
+<div class="shell"><section class="hero"><div class="hero-copy"><div class="eyebrow">Um giro de cada vez</div><h1>Veja o caminho.<br>Entenda o cubo.</h1><p>Fotografe as seis faces, acompanhe as bolinhas coloridas e reproduza cada movimento no seu cubo mágico.</p><div class="row"><button id="startBtn" class="btn primary"><svg aria-hidden="true"><use href="#i-camera"/></svg>Registrar meu cubo</button><button id="demoBtn" class="btn ghost"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver demonstração</button></div></div><div class="hero-motif" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></section>
+<div id="resumeNotice" class="notice resume" hidden>Seu progresso foi recuperado. <strong>Confira se o cubo físico corresponde ao estado mostrado.</strong> Se você fez outros giros, registre as faces novamente.<button id="resumeBtn" class="linkbtn">Retomar solução</button></div>
+<nav class="tabs" aria-label="Etapas do aplicativo" role="tablist"><button class="tab active" id="tabCapture" role="tab" aria-controls="panelCapture" aria-selected="true" data-tab="capture"><span class="tab-num">1</span>Registrar faces</button><button class="tab" id="tabSolve" role="tab" aria-controls="panelSolve" aria-selected="false" data-tab="solve"><span class="tab-num">2</span>Seguir os giros</button><button class="tab" id="tabLearn" role="tab" aria-controls="panelLearn" aria-selected="false" data-tab="learn"><span class="tab-num">3</span>Aprender</button></nav>
+<main id="main">
+<section id="panelCapture" class="tab-panel" role="tabpanel" aria-labelledby="tabCapture">
+<div class="capture-layout">
+<div class="card"><div class="card-head"><div><div class="eyebrow muted" id="faceStep">FACE 1 DE 6</div><h2 id="faceTitle" class="gap">F · Frente</h2><p id="faceSubtitle">O centro verde identifica a frente.</p></div><span class="badge" id="registeredBadge">0/6 faces</span></div>
+<div class="notice face-guide-big"><strong>Gire o cubo inteiro para a foto, sem girar suas camadas.</strong> Olhe diretamente para a face pedida e mantenha os centros vizinhos nas posições indicadas.</div>
+<div class="orientation" id="orientation"></div>
+<div class="photo-wrap" id="photoWrap"><div class="photo-empty" id="photoEmpty"><svg aria-hidden="true"><use href="#i-camera"/></svg><h3>Uma face por foto</h3><p class="gap">Use luz difusa, evite reflexos e deixe os nove adesivos visíveis. Depois arraste os quatro cantos da marcação até as bordas da face.</p></div><canvas id="photoCanvas" width="720" height="720" hidden aria-label="Foto da face: arraste os quatro cantos numerados para delimitar os nove adesivos"></canvas><video id="cameraVideo" autoplay playsinline muted hidden></video><div class="camera-guide" id="cameraGuide" hidden></div></div>
+<div class="row camera-actions"><button id="photoBtn" class="btn secondary sm"><svg aria-hidden="true"><use href="#i-camera"/></svg>Tirar foto</button><button id="fileBtn" class="btn ghost sm"><svg aria-hidden="true"><use href="#i-upload"/></svg>Escolher foto</button><button id="liveBtn" class="btn ghost sm">Câmera ao vivo</button><button id="snapBtn" class="btn primary sm" hidden>Capturar face</button><button id="stopCameraBtn" class="btn ghost sm" hidden>Fechar câmera</button></div>
+<input id="cameraInput" type="file" accept="image/*" capture="environment" hidden><input id="fileInput" type="file" accept="image/*" hidden>
+<p id="photoHelp" class="photo-help muted">No computador, você também pode preencher as cores manualmente.</p>
+<button id="readPhotoBtn" class="btn primary full" disabled>Ler as 9 cores da foto</button>
+<div id="photoStatus" class="status-strip" role="status" aria-live="polite"></div>
+<details><summary>Como posicionar Cima, Baixo e Trás?</summary><p id="orientationHelp"></p><p>O sentido da foto importa: uma imagem girada 90° altera a posição das peças. Se necessário, use “Girar mapa 90°” para corrigir a orientação.</p></details>
+<p class="small muted gap">As fotos são processadas no seu dispositivo. O app não envia imagens a um servidor.</p>
+</div>
+<div class="card"><div class="card-head"><div><h2>Confira as cores</h2><p>Escolha uma cor e toque no adesivo que deseja corrigir. O centro fica fixo.</p></div></div>
+<div id="faceTabs" class="face-tabs" aria-label="Faces do cubo"></div>
+<div id="faceEditor" class="face-editor" role="group" aria-label="Nove cores da face atual"></div>
+<div id="palette" class="palette" role="group" aria-label="Escolher cor para pintar"></div>
+<div class="row between gap"><button id="eraseBtn" class="linkbtn">Apagar uma posição</button><button id="rotateFaceBtn" class="btn ghost sm">Girar mapa 90° ↻</button></div>
+<div id="faceStatus" class="small muted gap" role="status">Preencha as oito posições ao redor do centro.</div>
+<button id="confirmFaceBtn" class="btn primary full gap"><svg aria-hidden="true"><use href="#i-check"/></svg>Confirmar face e seguir</button>
+<details><summary>Meu cubo tem outros centros</summary><p>Os centros definem os nomes das faces. Escolha a cor de cada centro conforme a posição de referência que você vai usar.</p><div id="schemeGrid" class="scheme-grid"></div><button id="applySchemeBtn" class="btn secondary sm">Aplicar combinação de centros</button></details>
+<details><summary>Ajustar a leitura pelas seis fotos</summary><p>Depois de fotografar as seis faces, o app pode usar seus próprios centros como referência de cor. Correções feitas manualmente são preservadas.</p><button id="calibrateBtn" class="btn ghost sm" disabled>Recalibrar cores das fotos</button></details>
+</div>
+<div class="card capture-complete"><div class="row between"><div><h3 id="captureReadyTitle">Registre as seis faces</h3><p class="muted small gap" id="captureReadyText">Cada cor precisa aparecer nove vezes. O app também verifica se as peças formam um cubo possível.</p></div><button id="solveBtn" class="btn orange" disabled>Gerar minha solução →</button></div><div id="validationErrors" class="notice error gap" hidden role="alert"></div></div>
+</div>
+</section>
+<section id="panelSolve" class="tab-panel" role="tabpanel" aria-labelledby="tabSolve" hidden>
+<div id="solveEmpty" class="card solve-empty"><span class="badge">54 adesivos · 6 centros · 12 giros básicos</span><h2 class="gap">Seu cubo vira um mapa de movimentos</h2><p class="muted">Registre as seis faces para calcular uma sequência, ou veja uma demonstração antes de começar.</p><div class="row" style="justify-content:center"><button id="emptyCaptureBtn" class="btn primary">Registrar faces</button><button id="emptyDemoBtn" class="btn ghost">Ver demonstração</button></div></div>
+<div id="solverLoading" class="loading" hidden><div class="spinner" aria-hidden="true"></div><h2>Preparando seu caminho</h2><p id="solverStatus" class="muted gap" role="status" aria-live="polite">Inicializando o motor de resolução no seu dispositivo…</p><div class="loader-progress"><span id="solverProgress" style="width:0%"></span></div><p class="small muted">A primeira preparação pode levar alguns segundos, ou mais em celulares antigos. Mantenha esta aba aberta.</p><button id="cancelSolveBtn" class="btn ghost sm gap">Cancelar cálculo</button></div>
+<div id="solveContent" hidden><div class="progress-head"><div><span id="sessionType" class="badge">Seu cubo</span><h2 class="gap">Acompanhe cada giro</h2></div><div style="text-align:right"><strong id="progressText">0 de 0 giros</strong><div class="small muted" id="progressPercent">0% confirmado</div></div></div><div class="progress" role="progressbar" id="solveProgress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Giros confirmados"><span id="progressBar"></span></div>
+<div class="solve-controls"><div class="select-group"><label for="maskSelect">Máscara de tutoria</label><select id="maskSelect"><option value="full">Ajuda completa</option><option value="partial">Ajuda parcial</option><option value="none">Autonomia</option></select><label for="speedSelect">Animação</label><select id="speedSelect"><option value="2200">Lenta</option><option value="1400" selected>Normal</option><option value="750">Rápida</option></select></div><button id="newCubeBtn" class="btn ghost sm">Registrar outro cubo</button></div>
+<div class="solve-layout"><div class="card graph-card"><div class="graph-top"><h3>O caminho das bolinhas</h3><span id="graphMoveLabel">Posição inicial</span></div><div id="graphHost"></div><div id="graphCaption" class="graph-caption">Toque em uma bolinha para acompanhá-la no gráfico e no cubo. Os anéis pontilhados marcam os centros fixos.</div><details><summary>Ver as seis faces abertas</summary><div id="netHost"></div><p class="small muted">Cada quadradinho corresponde a uma bolinha do gráfico. As letras identificam os centros.</p></details></div>
+<div><div class="cube-card"><div id="cubeHost"></div><div class="cube-view"><label for="cubeView">Vista do desenho</label><select id="cubeView"><option value="auto">Automática: mostra a face do giro</option><option value="front">Frente / direita / cima</option><option value="back">Trás / esquerda / cima</option><option value="bottom">Frente / direita / baixo</option></select></div></div><div class="reference-line" id="referenceLine"></div>
+<div id="nextMoveCard" class="next-card"><div class="move-top"><div id="moveToken" class="move-token">R</div><div class="move-copy"><div id="moveEyebrow" class="eyebrow">PRÓXIMO GIRO</div><h3 id="moveTitle">Face direita</h3><p id="moveCenter">Procure o centro vermelho.</p></div></div><div class="direction"><span id="turnIcon" class="turn-icon" aria-hidden="true">↻</span><div><strong id="turnText">90° no sentido horário</strong><div id="turnViewText" class="small">Olhando diretamente para a face que será girada.</div></div></div>
+<div id="hintList" class="hints"></div><button id="hintBtn" class="linkbtn">Mostrar mais uma pista</button>
+<div id="previewNote" class="preview-note" hidden><strong>Prévia do resultado.</strong> O gráfico ainda não conta esse giro como realizado. Reproduza-o no cubo e confirme abaixo.</div>
+<div class="animation-tools"><button id="previewBtn" class="btn secondary"><svg aria-hidden="true"><use href="#i-play"/></svg>Ensaiar animação</button><button id="pauseBtn" class="btn ghost icon-only" hidden>Pausar</button></div>
+<div class="confirm-area"><button id="confirmMoveBtn" class="btn primary full"><svg aria-hidden="true"><use href="#i-check"/></svg>Já fiz esse giro no cubo →</button><button id="undoBtn" class="btn ghost full sm"><svg aria-hidden="true"><use href="#i-back"/></svg>Desfazer o último giro</button><button id="cancelUndoBtn" class="linkbtn" hidden>Cancelar retorno</button></div><p class="small muted gap">A confirmação é sua: o app não observa automaticamente os movimentos do cubo físico.</p></div>
+<div id="completeCard" class="complete-card" hidden><div class="done-icon">✓</div><h2>Sequência concluída!</h2><p>O modelo está resolvido. Confira se cada uma das seis faces do seu cubo físico tem uma só cor.</p><button id="completeUndoBtn" class="btn ghost sm">Desfazer o último giro</button><button id="completeNewBtn" class="btn primary full gap">Registrar outro cubo</button></div>
+</div></div>
+<div class="card gap"><div class="row between"><div><h3>Sua sequência</h3><p class="small muted gap">Giros de 180° foram divididos em dois passos de 90° para facilitar a reprodução.</p></div><button id="copySequenceBtn" class="btn ghost sm">Copiar sequência</button></div><div id="sequenceHost" class="sequence"></div><p class="small muted gap">Esta é uma solução guiada para o estado registrado. Ela pode reorganizar várias regiões ao mesmo tempo; para praticar a leitura dos giros, abra “Aprender”.</p></div>
+</div>
+</section>
+<section id="panelLearn" class="tab-panel" role="tabpanel" aria-labelledby="tabLearn" hidden>
+<div class="learn-grid"><div class="card"><span class="badge">Primeiro, o significado</span><h2 class="gap">Aprenda a ler um giro</h2><div class="lesson-list"><div class="lesson-item"><b>1</b><p><strong>O centro dá o nome à face.</strong>U = Cima, R = Direita, F = Frente, D = Baixo, L = Esquerda e B = Trás. Os centros ficam nas mesmas posições durante os giros.</p></div><div class="lesson-item"><b>2</b><p><strong>Sem apóstrofo: horário.</strong>R significa girar a face direita 90° no sentido horário, olhando diretamente para ela.</p></div><div class="lesson-item"><b>3</b><p><strong>Com apóstrofo: anti-horário.</strong>R′ desfaz R. O sentido sempre é visto de frente para a face girada, inclusive Trás e Baixo.</p></div><div class="lesson-item"><b>4</b><p><strong>Um giro também mexe nas faixas vizinhas.</strong>O gráfico destaca cinco circuitos de quatro posições: 8 adesivos da face e 12 das faces ao redor. O centro não entra nesse deslocamento.</p></div></div><div class="help-box"><strong>Posição de referência:</strong> mantenha o centro F à sua frente e o centro U em cima. Se inclinar o cubo para enxergar uma face, volte a essa referência antes do próximo passo.</div></div>
+<div class="card"><span class="badge">Observe · Preveja · Faça · Confira</span><h2 class="gap">Máscaras de Tutoria</h2><p class="muted gap">A ajuda revela a estrutura do movimento. Conforme você ganha segurança, esconda as pistas e tente antecipar o percurso.</p><div class="lesson-list"><div class="lesson-item"><b>●</b><p><strong>Ajuda completa</strong>Mostra os percursos, identifica as bolinhas e explica cada giro em três pistas.</p></div><div class="lesson-item"><b>◐</b><p><strong>Ajuda parcial</strong>Destaca o giro atual e revela as explicações quando você pede.</p></div><div class="lesson-item"><b>○</b><p><strong>Autonomia</strong>Mantém o nome da face e o sentido do giro. Você decide quando precisa de uma pista.</p></div></div><p class="small muted">Aqui, a máscara atua como apoio à leitura espacial dos giros. Uma formação completa no método de camadas pode ser acrescentada em módulos posteriores.</p><label>Experimente uma face no laboratório:</label><div id="lessonSelector" class="lesson-selector"></div><div class="row learn-turns"><button id="lessonCW" class="btn primary">↻ Horário</button><button id="lessonCCW" class="btn ghost">↺ Anti-horário</button><button id="lessonReset" class="linkbtn">Reiniciar laboratório</button></div><p class="small muted gap">O laboratório é um cubo virtual separado. Seus testes não alteram a solução do seu cubo físico.</p></div>
+<div class="learn-demo"><div><h3 class="learn-mobile-title">Laboratório de movimentos</h3><div id="learnGraphHost"></div><div id="learnMoveText" class="learn-demo-text gap">Escolha uma face e observe os percursos antes de girar.</div></div><div><div class="cube-card" id="learnCubeHost"></div><p class="learn-demo-text gap">Cada bolinha corresponde a um adesivo. O desenho em 3D e o gráfico representam <strong>o mesmo movimento</strong>.</p></div></div>
+<div class="card" style="grid-column:1/-1"><h2>Confira o que você percebeu</h2><div id="quizHost"></div></div></div>
+</section>
+</main></div>
+<footer>Concepção pedagógica: Professor Leonardo C. P. Barreto · Cubo em Movimento · Versão 1.0<br>HTML independente · Fotos processadas localmente · Progresso salvo neste navegador, quando disponível.</footer>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<dialog id="aboutDialog"><h2>Cubo em Movimento</h2><p>Um tutor visual para cubos mágicos 3×3: fotos das faces, gráfico de adesivos e animações sincronizadas com um cubo em 3D.</p><ul class="about-list"><li>Capture as seis faces na orientação indicada e confira todas as cores.</li><li>O modelo verifica a quantidade de cores, as peças, suas orientações e a paridade antes de calcular.</li><li>A sequência usa o algoritmo de duas fases de Kociemba. A tutoria explica cada giro; esta versão não apresenta um curso completo do método de camadas.</li><li>As fotos não saem do dispositivo. Apenas cores, amostras de cor e progresso ficam no armazenamento local do navegador.</li><li>Para usar a câmera ao vivo, abra o app em uma página HTTPS, como o GitHub Pages. Você também pode escolher fotos ou preencher as cores manualmente.</li></ul><details><summary>Créditos do motor de resolução</summary><p>cube.js — Petri Lehtinen e Ludovic Fernandez. Licença MIT. <a href="https://github.com/ldez/cubejs" target="_blank" rel="noopener noreferrer">Código original</a>.</p><pre id="licenseText">Copyright (c) 2013-2017 Petri Lehtinen &lt;petri@digip.org&gt;
+Copyright (c) 2018 Ludovic Fernandez
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+</pre></details><form method="dialog"><button class="btn primary">Fechar</button></form></dialog>
+<dialog id="confirmDialog"><h2 id="dialogTitle">Começar outro cubo?</h2><p id="dialogText">Isso limpa o registro e a sequência atual deste navegador.</p><form method="dialog"><button class="btn ghost" value="cancel">Cancelar</button><button class="btn primary" id="dialogAccept" value="accept">Continuar</button></form></dialog>
+<noscript><div class="no-js">Ative o JavaScript no navegador para usar a câmera, o modelo do cubo e as animações.</div></noscript>
+<script id="cubejsCore">
+/* cube.js — MIT
+Copyright (c) 2013-2017 Petri Lehtinen <petri@digip.org>
+Copyright (c) 2018 Ludovic Fernandez
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+*/
+(function() {
+  // Centers
+  var B, BL, BR, Cube, D, DB, DBL, DF, DFR, DL, DLF, DR, DRB, F, FL, FR, L, R, U, UB, UBR, UF, UFL, UL, ULB, UR, URF, centerColor, centerFacelet, cornerColor, cornerFacelet, edgeColor, edgeFacelet;
+
+  [U, R, F, D, L, B] = [0, 1, 2, 3, 4, 5];
+
+  // Corners
+  [URF, UFL, ULB, UBR, DFR, DLF, DBL, DRB] = [0, 1, 2, 3, 4, 5, 6, 7];
+
+  // Edges
+  [UR, UF, UL, UB, DR, DF, DL, DB, FR, FL, BL, BR] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+  [centerFacelet, cornerFacelet, edgeFacelet] = (function() {
+    var _B, _D, _F, _L, _R, _U;
+    _U = function(x) {
+      return x - 1;
+    };
+    _R = function(x) {
+      return _U(9) + x;
+    };
+    _F = function(x) {
+      return _R(9) + x;
+    };
+    _D = function(x) {
+      return _F(9) + x;
+    };
+    _L = function(x) {
+      return _D(9) + x;
+    };
+    _B = function(x) {
+      return _L(9) + x;
+    };
+    return [
+      // Centers
+      [4,
+      13,
+      22,
+      31,
+      40,
+      49],
+      // Corners
+      [[_U(9),
+      _R(1),
+      _F(3)],
+      [_U(7),
+      _F(1),
+      _L(3)],
+      [_U(1),
+      _L(1),
+      _B(3)],
+      [_U(3),
+      _B(1),
+      _R(3)],
+      [_D(3),
+      _F(9),
+      _R(7)],
+      [_D(1),
+      _L(9),
+      _F(7)],
+      [_D(7),
+      _B(9),
+      _L(7)],
+      [_D(9),
+      _R(9),
+      _B(7)]],
+      // Edges
+      [[_U(6),
+      _R(2)],
+      [_U(8),
+      _F(2)],
+      [_U(4),
+      _L(2)],
+      [_U(2),
+      _B(2)],
+      [_D(6),
+      _R(8)],
+      [_D(2),
+      _F(8)],
+      [_D(4),
+      _L(8)],
+      [_D(8),
+      _B(8)],
+      [_F(6),
+      _R(4)],
+      [_F(4),
+      _L(6)],
+      [_B(6),
+      _L(4)],
+      [_B(4),
+      _R(6)]]
+    ];
+  })();
+
+  centerColor = ['U', 'R', 'F', 'D', 'L', 'B'];
+
+  cornerColor = [['U', 'R', 'F'], ['U', 'F', 'L'], ['U', 'L', 'B'], ['U', 'B', 'R'], ['D', 'F', 'R'], ['D', 'L', 'F'], ['D', 'B', 'L'], ['D', 'R', 'B']];
+
+  edgeColor = [['U', 'R'], ['U', 'F'], ['U', 'L'], ['U', 'B'], ['D', 'R'], ['D', 'F'], ['D', 'L'], ['D', 'B'], ['F', 'R'], ['F', 'L'], ['B', 'L'], ['B', 'R']];
+
+  Cube = (function() {
+    var faceNames, faceNums, parseAlg;
+
+    class Cube {
+      constructor(other) {
+        var x;
+        if (other != null) {
+          this.init(other);
+        } else {
+          this.identity();
+        }
+        // For moves to avoid allocating new objects each time
+        this.newCenter = (function() {
+          var k, results;
+          results = [];
+          for (x = k = 0; k <= 5; x = ++k) {
+            results.push(0);
+          }
+          return results;
+        })();
+        this.newCp = (function() {
+          var k, results;
+          results = [];
+          for (x = k = 0; k <= 7; x = ++k) {
+            results.push(0);
+          }
+          return results;
+        })();
+        this.newEp = (function() {
+          var k, results;
+          results = [];
+          for (x = k = 0; k <= 11; x = ++k) {
+            results.push(0);
+          }
+          return results;
+        })();
+        this.newCo = (function() {
+          var k, results;
+          results = [];
+          for (x = k = 0; k <= 7; x = ++k) {
+            results.push(0);
+          }
+          return results;
+        })();
+        this.newEo = (function() {
+          var k, results;
+          results = [];
+          for (x = k = 0; k <= 11; x = ++k) {
+            results.push(0);
+          }
+          return results;
+        })();
+      }
+
+      init(state) {
+        this.center = state.center.slice(0);
+        this.co = state.co.slice(0);
+        this.ep = state.ep.slice(0);
+        this.cp = state.cp.slice(0);
+        return this.eo = state.eo.slice(0);
+      }
+
+      identity() {
+        var x;
+        // Initialize to the identity cube
+        this.center = [0, 1, 2, 3, 4, 5];
+        this.cp = [0, 1, 2, 3, 4, 5, 6, 7];
+        this.co = (function() {
+          var k, results;
+          results = [];
+          for (x = k = 0; k <= 7; x = ++k) {
+            results.push(0);
+          }
+          return results;
+        })();
+        this.ep = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        return this.eo = (function() {
+          var k, results;
+          results = [];
+          for (x = k = 0; k <= 11; x = ++k) {
+            results.push(0);
+          }
+          return results;
+        })();
+      }
+
+      toJSON() {
+        return {
+          center: this.center,
+          cp: this.cp,
+          co: this.co,
+          ep: this.ep,
+          eo: this.eo
+        };
+      }
+
+      asString() {
+        var corner, edge, i, k, l, m, n, o, ori, p, result;
+        result = [];
+        for (i = k = 0; k <= 5; i = ++k) {
+          result[9 * i + 4] = centerColor[this.center[i]];
+        }
+        for (i = l = 0; l <= 7; i = ++l) {
+          corner = this.cp[i];
+          ori = this.co[i];
+          for (n = m = 0; m <= 2; n = ++m) {
+            result[cornerFacelet[i][(n + ori) % 3]] = cornerColor[corner][n];
+          }
+        }
+        for (i = o = 0; o <= 11; i = ++o) {
+          edge = this.ep[i];
+          ori = this.eo[i];
+          for (n = p = 0; p <= 1; n = ++p) {
+            result[edgeFacelet[i][(n + ori) % 2]] = edgeColor[edge][n];
+          }
+        }
+        return result.join('');
+      }
+
+      static fromString(str) {
+        var col1, col2, cube, i, j, k, l, m, o, ori, p, q, r, ref;
+        cube = new Cube();
+        for (i = k = 0; k <= 5; i = ++k) {
+          for (j = l = 0; l <= 5; j = ++l) {
+            if (str[9 * i + 4] === centerColor[j]) {
+              cube.center[i] = j;
+            }
+          }
+        }
+        for (i = m = 0; m <= 7; i = ++m) {
+          for (ori = o = 0; o <= 2; ori = ++o) {
+            if ((ref = str[cornerFacelet[i][ori]]) === 'U' || ref === 'D') {
+              break;
+            }
+          }
+          col1 = str[cornerFacelet[i][(ori + 1) % 3]];
+          col2 = str[cornerFacelet[i][(ori + 2) % 3]];
+          for (j = p = 0; p <= 7; j = ++p) {
+            if (col1 === cornerColor[j][1] && col2 === cornerColor[j][2]) {
+              cube.cp[i] = j;
+              cube.co[i] = ori % 3;
+            }
+          }
+        }
+        for (i = q = 0; q <= 11; i = ++q) {
+          for (j = r = 0; r <= 11; j = ++r) {
+            if (str[edgeFacelet[i][0]] === edgeColor[j][0] && str[edgeFacelet[i][1]] === edgeColor[j][1]) {
+              cube.ep[i] = j;
+              cube.eo[i] = 0;
+              break;
+            }
+            if (str[edgeFacelet[i][0]] === edgeColor[j][1] && str[edgeFacelet[i][1]] === edgeColor[j][0]) {
+              cube.ep[i] = j;
+              cube.eo[i] = 1;
+              break;
+            }
+          }
+        }
+        return cube;
+      }
+
+      clone() {
+        return new Cube(this.toJSON());
+      }
+
+      // A class method returning a new random cube
+      static random() {
+        return new Cube().randomize();
+      }
+
+      isSolved() {
+        var c, cent, clone, e, k, l, m;
+        clone = this.clone();
+        clone.move(clone.upright());
+        for (cent = k = 0; k <= 5; cent = ++k) {
+          if (clone.center[cent] !== cent) {
+            return false;
+          }
+        }
+        for (c = l = 0; l <= 7; c = ++l) {
+          if (clone.cp[c] !== c) {
+            return false;
+          }
+          if (clone.co[c] !== 0) {
+            return false;
+          }
+        }
+        for (e = m = 0; m <= 11; e = ++m) {
+          if (clone.ep[e] !== e) {
+            return false;
+          }
+          if (clone.eo[e] !== 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      // Multiply this Cube with another Cube, restricted to centers.
+      centerMultiply(other) {
+        var from, k, to;
+        for (to = k = 0; k <= 5; to = ++k) {
+          from = other.center[to];
+          this.newCenter[to] = this.center[from];
+        }
+        [this.center, this.newCenter] = [this.newCenter, this.center];
+        return this;
+      }
+
+      // Multiply this Cube with another Cube, restricted to corners.
+      cornerMultiply(other) {
+        var from, k, to;
+        for (to = k = 0; k <= 7; to = ++k) {
+          from = other.cp[to];
+          this.newCp[to] = this.cp[from];
+          this.newCo[to] = (this.co[from] + other.co[to]) % 3;
+        }
+        [this.cp, this.newCp] = [this.newCp, this.cp];
+        [this.co, this.newCo] = [this.newCo, this.co];
+        return this;
+      }
+
+      // Multiply this Cube with another Cube, restricted to edges
+      edgeMultiply(other) {
+        var from, k, to;
+        for (to = k = 0; k <= 11; to = ++k) {
+          from = other.ep[to];
+          this.newEp[to] = this.ep[from];
+          this.newEo[to] = (this.eo[from] + other.eo[to]) % 2;
+        }
+        [this.ep, this.newEp] = [this.newEp, this.ep];
+        [this.eo, this.newEo] = [this.newEo, this.eo];
+        return this;
+      }
+
+      // Multiply this cube with another Cube
+      multiply(other) {
+        this.centerMultiply(other);
+        this.cornerMultiply(other);
+        this.edgeMultiply(other);
+        return this;
+      }
+
+      move(arg) {
+        var face, k, l, len, move, power, ref, ref1, x;
+        ref = parseAlg(arg);
+        for (k = 0, len = ref.length; k < len; k++) {
+          move = ref[k];
+          face = move / 3 | 0;
+          power = move % 3;
+          for (x = l = 0, ref1 = power; (0 <= ref1 ? l <= ref1 : l >= ref1); x = 0 <= ref1 ? ++l : --l) {
+            this.multiply(Cube.moves[face]);
+          }
+        }
+        return this;
+      }
+
+      upright() {
+        var clone, i, j, k, l, result;
+        clone = this.clone();
+        result = [];
+        for (i = k = 0; k <= 5; i = ++k) {
+          if (clone.center[i] === F) {
+            break;
+          }
+        }
+        switch (i) {
+          case D:
+            result.push("x");
+            break;
+          case U:
+            result.push("x'");
+            break;
+          case B:
+            result.push("x2");
+            break;
+          case R:
+            result.push("y");
+            break;
+          case L:
+            result.push("y'");
+        }
+        if (result.length) {
+          clone.move(result[0]);
+        }
+        for (j = l = 0; l <= 5; j = ++l) {
+          if (clone.center[j] === U) {
+            break;
+          }
+        }
+        switch (j) {
+          case L:
+            result.push("z");
+            break;
+          case R:
+            result.push("z'");
+            break;
+          case D:
+            result.push("z2");
+        }
+        return result.join(' ');
+      }
+
+      static inverse(arg) {
+        var face, k, len, move, power, result, str;
+        result = (function() {
+          var k, len, ref, results;
+          ref = parseAlg(arg);
+          results = [];
+          for (k = 0, len = ref.length; k < len; k++) {
+            move = ref[k];
+            face = move / 3 | 0;
+            power = move % 3;
+            results.push(face * 3 + -(power - 1) + 1);
+          }
+          return results;
+        })();
+        result.reverse();
+        if (typeof arg === 'string') {
+          str = '';
+          for (k = 0, len = result.length; k < len; k++) {
+            move = result[k];
+            face = move / 3 | 0;
+            power = move % 3;
+            str += faceNames[face];
+            if (power === 1) {
+              str += '2';
+            } else if (power === 2) {
+              str += "'";
+            }
+            str += ' ';
+          }
+          return str.substring(0, str.length - 1);
+        } else if (arg.length != null) {
+          return result;
+        } else {
+          return result[0];
+        }
+      }
+
+    };
+
+    Cube.prototype.randomize = (function() {
+      var arePermutationsValid, generateValidRandomOrientation, generateValidRandomPermutation, getNumSwaps, isOrientationValid, randint, randomizeOrientation, result, shuffle;
+      randint = function(min, max) {
+        return min + Math.floor(Math.random() * (max - min + 1));
+      };
+      // Fisher-Yates shuffle adapted from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+      shuffle = function(array) {
+        var currentIndex, randomIndex, temporaryValue;
+        currentIndex = array.length;
+        // While there remain elements to shuffle...
+        while (currentIndex !== 0) {
+          // Pick a remaining element...
+          randomIndex = randint(0, currentIndex - 1);
+          currentIndex -= 1;
+          // And swap it with the current element.
+          temporaryValue = array[currentIndex];
+          [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+      };
+      getNumSwaps = function(arr) {
+        var cur, cycleLength, i, k, numSwaps, ref, seen, x;
+        numSwaps = 0;
+        seen = (function() {
+          var k, ref, results;
+          results = [];
+          for (x = k = 0, ref = arr.length - 1; (0 <= ref ? k <= ref : k >= ref); x = 0 <= ref ? ++k : --k) {
+            results.push(false);
+          }
+          return results;
+        })();
+        while (true) {
+          // We compute the cycle decomposition
+          cur = -1;
+          for (i = k = 0, ref = arr.length - 1; (0 <= ref ? k <= ref : k >= ref); i = 0 <= ref ? ++k : --k) {
+            if (!seen[i]) {
+              cur = i;
+              break;
+            }
+          }
+          if (cur === -1) {
+            break;
+          }
+          cycleLength = 0;
+          while (!seen[cur]) {
+            seen[cur] = true;
+            cycleLength++;
+            cur = arr[cur];
+          }
+          // A cycle is equivalent to cycleLength + 1 swaps
+          numSwaps += cycleLength + 1;
+        }
+        return numSwaps;
+      };
+      arePermutationsValid = function(cp, ep) {
+        var numSwaps;
+        numSwaps = getNumSwaps(ep) + getNumSwaps(cp);
+        return numSwaps % 2 === 0;
+      };
+      generateValidRandomPermutation = function(cp, ep) {
+        // Each shuffle only takes around 12 operations and there's a 50%
+        // chance of a valid permutation so it'll finish in very good time
+        shuffle(ep);
+        shuffle(cp);
+        while (!arePermutationsValid(cp, ep)) {
+          shuffle(ep);
+          shuffle(cp);
+        }
+      };
+      randomizeOrientation = function(arr, numOrientations) {
+        var i, k, ori, ref;
+        ori = 0;
+        for (i = k = 0, ref = arr.length - 1; (0 <= ref ? k <= ref : k >= ref); i = 0 <= ref ? ++k : --k) {
+          ori += (arr[i] = randint(0, numOrientations - 1));
+        }
+      };
+      isOrientationValid = function(arr, numOrientations) {
+        return arr.reduce(function(a, b) {
+          return a + b;
+        }) % numOrientations === 0;
+      };
+      generateValidRandomOrientation = function(co, eo) {
+        // There is a 1/2 and 1/3 probably respectively of each of these
+        // succeeding so the probability of them running 10 times before
+        // success is already only 1% and only gets exponentially lower
+        // and each generation is only in the 10s of operations which is nothing
+        randomizeOrientation(co, 3);
+        while (!isOrientationValid(co, 3)) {
+          randomizeOrientation(co, 3);
+        }
+        randomizeOrientation(eo, 2);
+        while (!isOrientationValid(eo, 2)) {
+          randomizeOrientation(eo, 2);
+        }
+      };
+      result = function() {
+        generateValidRandomPermutation(this.cp, this.ep);
+        generateValidRandomOrientation(this.co, this.eo);
+        return this;
+      };
+      return result;
+    })();
+
+    Cube.moves = [
+      {
+        // U
+        center: [0, 1, 2, 3, 4, 5],
+        cp: [UBR,
+      URF,
+      UFL,
+      ULB,
+      DFR,
+      DLF,
+      DBL,
+      DRB],
+        co: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0],
+        ep: [UB,
+      UR,
+      UF,
+      UL,
+      DR,
+      DF,
+      DL,
+      DB,
+      FR,
+      FL,
+      BL,
+      BR],
+        eo: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0]
+      },
+      {
+        // R
+        center: [0, 1, 2, 3, 4, 5],
+        cp: [DFR,
+      UFL,
+      ULB,
+      URF,
+      DRB,
+      DLF,
+      DBL,
+      UBR],
+        co: [2,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      2],
+        ep: [FR,
+      UF,
+      UL,
+      UB,
+      BR,
+      DF,
+      DL,
+      DB,
+      DR,
+      FL,
+      BL,
+      UR],
+        eo: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0]
+      },
+      {
+        // F
+        center: [0, 1, 2, 3, 4, 5],
+        cp: [UFL,
+      DLF,
+      ULB,
+      UBR,
+      URF,
+      DFR,
+      DBL,
+      DRB],
+        co: [1,
+      2,
+      0,
+      0,
+      2,
+      1,
+      0,
+      0],
+        ep: [UR,
+      FL,
+      UL,
+      UB,
+      DR,
+      FR,
+      DL,
+      DB,
+      UF,
+      DF,
+      BL,
+      BR],
+        eo: [0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0]
+      },
+      {
+        // D
+        center: [0, 1, 2, 3, 4, 5],
+        cp: [URF,
+      UFL,
+      ULB,
+      UBR,
+      DLF,
+      DBL,
+      DRB,
+      DFR],
+        co: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0],
+        ep: [UR,
+      UF,
+      UL,
+      UB,
+      DF,
+      DL,
+      DB,
+      DR,
+      FR,
+      FL,
+      BL,
+      BR],
+        eo: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0]
+      },
+      {
+        // L
+        center: [0, 1, 2, 3, 4, 5],
+        cp: [URF,
+      ULB,
+      DBL,
+      UBR,
+      DFR,
+      UFL,
+      DLF,
+      DRB],
+        co: [0,
+      1,
+      2,
+      0,
+      0,
+      2,
+      1,
+      0],
+        ep: [UR,
+      UF,
+      BL,
+      UB,
+      DR,
+      DF,
+      FL,
+      DB,
+      FR,
+      UL,
+      DL,
+      BR],
+        eo: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0]
+      },
+      {
+        // B
+        center: [0, 1, 2, 3, 4, 5],
+        cp: [URF,
+      UFL,
+      UBR,
+      DRB,
+      DFR,
+      DLF,
+      ULB,
+      DBL],
+        co: [0,
+      0,
+      1,
+      2,
+      0,
+      0,
+      2,
+      1],
+        ep: [UR,
+      UF,
+      UL,
+      BR,
+      DR,
+      DF,
+      DL,
+      BL,
+      FR,
+      FL,
+      UB,
+      DB],
+        eo: [0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1]
+      },
+      {
+        // E
+        center: [U,
+      F,
+      L,
+      D,
+      B,
+      R],
+        cp: [URF,
+      UFL,
+      ULB,
+      UBR,
+      DFR,
+      DLF,
+      DBL,
+      DRB],
+        co: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0],
+        ep: [UR,
+      UF,
+      UL,
+      UB,
+      DR,
+      DF,
+      DL,
+      DB,
+      FL,
+      BL,
+      BR,
+      FR],
+        eo: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1]
+      },
+      {
+        // M
+        center: [B,
+      R,
+      U,
+      F,
+      L,
+      D],
+        cp: [URF,
+      UFL,
+      ULB,
+      UBR,
+      DFR,
+      DLF,
+      DBL,
+      DRB],
+        co: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0],
+        ep: [UR,
+      UB,
+      UL,
+      DB,
+      DR,
+      UF,
+      DL,
+      DF,
+      FR,
+      FL,
+      BL,
+      BR],
+        eo: [0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0]
+      },
+      {
+        // S
+        center: [L,
+      U,
+      F,
+      R,
+      D,
+      B],
+        cp: [URF,
+      UFL,
+      ULB,
+      UBR,
+      DFR,
+      DLF,
+      DBL,
+      DRB],
+        co: [0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0],
+        ep: [UL,
+      UF,
+      DL,
+      UB,
+      UR,
+      DF,
+      DR,
+      DB,
+      FR,
+      FL,
+      BL,
+      BR],
+        eo: [1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0]
+      }
+    ];
+
+    faceNums = {
+      U: 0,
+      R: 1,
+      F: 2,
+      D: 3,
+      L: 4,
+      B: 5,
+      E: 6,
+      M: 7,
+      S: 8,
+      x: 9,
+      y: 10,
+      z: 11,
+      u: 12,
+      r: 13,
+      f: 14,
+      d: 15,
+      l: 16,
+      b: 17
+    };
+
+    faceNames = {
+      0: 'U',
+      1: 'R',
+      2: 'F',
+      3: 'D',
+      4: 'L',
+      5: 'B',
+      6: 'E',
+      7: 'M',
+      8: 'S',
+      9: 'x',
+      10: 'y',
+      11: 'z',
+      12: 'u',
+      13: 'r',
+      14: 'f',
+      15: 'd',
+      16: 'l',
+      17: 'b'
+    };
+
+    parseAlg = function(arg) {
+      var k, len, move, part, power, ref, results;
+      if (typeof arg === 'string') {
+        ref = arg.split(/\s+/);
+        // String
+        results = [];
+        for (k = 0, len = ref.length; k < len; k++) {
+          part = ref[k];
+          if (part.length === 0) {
+            // First and last can be empty
+            continue;
+          }
+          if (part.length > 2) {
+            throw new Error(`Invalid move: ${part}`);
+          }
+          move = faceNums[part[0]];
+          if (move === void 0) {
+            throw new Error(`Invalid move: ${part}`);
+          }
+          if (part.length === 1) {
+            power = 0;
+          } else {
+            if (part[1] === '2') {
+              power = 1;
+            } else if (part[1] === "'") {
+              power = 2;
+            } else {
+              throw new Error(`Invalid move: ${part}`);
+            }
+          }
+          results.push(move * 3 + power);
+        }
+        return results;
+      } else if (arg.length != null) {
+        // Already an array
+        return arg;
+      } else {
+        // A single move
+        return [arg];
+      }
+    };
+
+    // x
+    Cube.moves.push(new Cube().move("R M' L'").toJSON());
+
+    // y
+    Cube.moves.push(new Cube().move("U E' D'").toJSON());
+
+    // z
+    Cube.moves.push(new Cube().move("F S B'").toJSON());
+
+    // u
+    Cube.moves.push(new Cube().move("U E'").toJSON());
+
+    // r
+    Cube.moves.push(new Cube().move("R M'").toJSON());
+
+    // f
+    Cube.moves.push(new Cube().move("F S").toJSON());
+
+    // d
+    Cube.moves.push(new Cube().move("D E").toJSON());
+
+    // l
+    Cube.moves.push(new Cube().move("L M").toJSON());
+
+    // b
+    Cube.moves.push(new Cube().move("B S'").toJSON());
+
+    return Cube;
+
+  }).call(this);
+
+  //# Globals
+  if (typeof module !== "undefined" && module !== null) {
+    module.exports = Cube;
+  } else {
+    this.Cube = Cube;
+  }
+
+}).call(this);
+
+
+</script>
+<script id="modelCode">
+/* Modelo geométrico, leitura das cores e validação — Cubo em Movimento. */
+const CuboModel = (() => {
+  const FACES = ['U','R','F','D','L','B'];
+  const COLORS = {
+    w:{name:'branco',hex:'#f3f4ee',rgb:[240,242,235],symbol:'Br'},
+    r:{name:'vermelho',hex:'#f04b60',rgb:[221,42,52],symbol:'V'},
+    g:{name:'verde',hex:'#29cd85',rgb:[28,175,83],symbol:'G'},
+    y:{name:'amarelo',hex:'#ffdb56',rgb:[250,214,42],symbol:'A'},
+    o:{name:'laranja',hex:'#ff962f',rgb:[247,118,21],symbol:'L'},
+    b:{name:'azul',hex:'#448cfa',rgb:[25,85,209],symbol:'Az'}
+  };
+  const DEFAULT_SCHEME = {U:'w',R:'r',F:'g',D:'y',L:'o',B:'b'};
+  const FACE_INFO = {
+    U:{name:'Cima',normal:[0,1,0],right:[1,0,0],up:[0,0,-1],neighbors:['B','R','F','L']},
+    R:{name:'Direita',normal:[1,0,0],right:[0,0,-1],up:[0,1,0],neighbors:['U','B','D','F']},
+    F:{name:'Frente',normal:[0,0,1],right:[1,0,0],up:[0,1,0],neighbors:['U','R','D','L']},
+    D:{name:'Baixo',normal:[0,-1,0],right:[1,0,0],up:[0,0,1],neighbors:['F','R','B','L']},
+    L:{name:'Esquerda',normal:[-1,0,0],right:[0,0,1],up:[0,1,0],neighbors:['U','F','D','B']},
+    B:{name:'Trás',normal:[0,0,-1],right:[-1,0,0],up:[0,1,0],neighbors:['U','L','D','R']}
+  };
+  const dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0);
+  const add=(a,b)=>a.map((x,i)=>x+b[i]);
+  const mul=(a,t)=>a.map(x=>x*t);
+  const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+  const norm=a=>mul(a,1/Math.hypot(...a));
+  function rotate(v,axis,angle){
+    const c=Math.cos(angle),s=Math.sin(angle);
+    return add(add(mul(v,c),mul(cross(axis,v),s)),mul(axis,dot(axis,v)*(1-c)));
+  }
+  const facelets=[];
+  for(const face of FACES){
+    const d=FACE_INFO[face];
+    for(let row=0;row<3;row++)for(let col=0;col<3;col++){
+      const pos=add(d.normal,add(mul(d.right,col-1),mul(d.up,1-row)));
+      facelets.push({face,row,col,pos,n:d.normal,right:d.right,up:d.up,
+        p:add(mul(pos,1.01),mul(d.normal,.491)),index:facelets.length});
+    }
+  }
+  const key=(p,n)=>p.map(Math.round).join(',')+'|'+n.map(Math.round).join(',');
+  const slotByKey=new Map(facelets.map(d=>[key(d.pos,d.n),d.index]));
+  const PERMS={};
+  for(const f of FACES){
+    const axis=FACE_INFO[f].normal;
+    PERMS[f]=facelets.map(d=>dot(d.pos,axis)>.5
+      ?slotByKey.get(key(rotate(d.pos,axis,-Math.PI/2),rotate(d.n,axis,-Math.PI/2)))
+      :d.index);
+  }
+  function parseMove(move){
+    if(!/^[URFDLB](?:'|2)?$/.test(move))throw Error('Movimento inválido.');
+    return {face:move[0],turns:move.endsWith('2')?2:move.endsWith("'")?3:1,
+      angle:move.endsWith("'")?Math.PI/2:move.endsWith('2')?-Math.PI:-Math.PI/2};
+  }
+  function apply(values,move){
+    const {face,turns}=parseMove(move);let v=values.slice();
+    for(let k=0;k<turns;k++){const next=new Array(54);PERMS[face].forEach((to,i)=>next[to]=v[i]);v=next;}
+    return v;
+  }
+  function inverse(move){return move.endsWith('2')?move:move.endsWith("'")?move[0]:move+"'";}
+  function expand(algorithm){
+    if(!algorithm.trim())return [];
+    return algorithm.trim().split(/\s+/).flatMap(m=>{parseMove(m);return m.endsWith('2')?[m[0],m[0]]:[m];});
+  }
+  function solved(scheme=DEFAULT_SCHEME){return FACES.flatMap(f=>Array(9).fill(scheme[f]));}
+  function isSolved(colors){return FACES.every((f,i)=>colors.slice(i*9,i*9+9).every(c=>c&&c===colors[i*9+4]));}
+  function parity(p){let n=0;for(let i=0;i<p.length;i++)for(let j=i+1;j<p.length;j++)if(p[i]>p[j])n++;return n%2;}
+  function validate(colors,scheme){
+    const errors=[];
+    if(new Set(Object.values(scheme)).size!==6||FACES.some(f=>!COLORS[scheme[f]]))
+      return {ok:false,errors:['Escolha seis cores diferentes para os centros.']};
+    if(colors.length!==54||colors.some(c=>!COLORS[c]))
+      return {ok:false,errors:['Complete as 54 posições. Cada face tem nove adesivos, incluindo o centro.']};
+    for(const [c,d] of Object.entries(COLORS)){
+      const n=colors.filter(x=>x===c).length;
+      if(n!==9)errors.push(`${d.name}: ${n} adesivos; são necessários 9.`);
+    }
+    FACES.forEach((f,i)=>{if(colors[i*9+4]!==scheme[f])errors.push(`O centro de ${FACE_INFO[f].name} não corresponde à cor escolhida.`);});
+    if(errors.length)return {ok:false,errors};
+    const colorToFace=Object.fromEntries(FACES.map(f=>[scheme[f],f]));
+    const text=colors.map(c=>colorToFace[c]).join('');
+    try{
+      const cube=Cube.fromString(text);
+      if(cube.asString()!==text||new Set(cube.cp).size!==8||new Set(cube.ep).size!==12)
+        errors.push('Há peças repetidas, cores incompatíveis ou uma face registrada na orientação errada. Confira as fotos, principalmente Cima, Baixo e Trás.');
+      else{
+        if(cube.co.reduce((a,b)=>a+b,0)%3)errors.push('A orientação dos cantos não é possível por giros normais. Confira as cores e a orientação das faces.');
+        if(cube.eo.reduce((a,b)=>a+b,0)%2)errors.push('A orientação das arestas não é possível por giros normais. Confira as cores e a orientação das faces.');
+        if(parity(cube.cp)!==parity(cube.ep))errors.push('A posição das peças não é possível por giros normais. Confira o registro; se estiver correto, uma peça pode ter sido remontada.');
+      }
+      return {ok:!errors.length,errors,text,cube};
+    }catch(e){return {ok:false,errors:['Não foi possível montar um cubo válido com essas cores. Confira o registro das seis faces.']};}
+  }
+  function makeHistory(initial,moves){
+    const states=[{colors:initial.slice(),ids:Array.from({length:54},(_,i)=>i)}];
+    for(const m of moves){const last=states[states.length-1];states.push({colors:apply(last.colors,m),ids:apply(last.ids,m)});}
+    return states;
+  }
+  // A projeção azimutal de área igual espalha a superfície do cubo em um disco.
+  // Os caminhos são as órbitas geométricas reais de cada adesivo, não atalhos entre nós.
+  const graphForward=norm([.64,.53,.57]);
+  const graphRight=norm(cross([0,1,0],graphForward));
+  const graphUp=cross(graphForward,graphRight);
+  function graphPoint(p){
+    const v=norm(p),x=dot(v,graphRight),y=dot(v,graphUp),z=Math.min(.999999999,dot(v,graphForward));
+    const h=Math.hypot(x,y),r=244*Math.sqrt(Math.max(0,(1-z)/2));
+    return {x:280+(h<1e-8?0:r*x/h),y:280-(h<1e-8?0:r*y/h)};
+  }
+  const graphPositions=facelets.map(d=>graphPoint(d.p));
+  function cycles(face){
+    const p=PERMS[face],seen=new Set(),out=[];
+    for(let i=0;i<54;i++)if(p[i]!==i&&!seen.has(i)){
+      const c=[];let j=i;do{c.push(j);seen.add(j);j=p[j];}while(j!==i);out.push(c);
+    }
+    return out;
+  }
+  function orbit(face,seed,steps=100){
+    const axis=FACE_INFO[face].normal,p=facelets[seed].p;
+    return Array.from({length:steps+1},(_,i)=>graphPoint(rotate(p,axis,-Math.PI*2*i/steps)));
+  }
+  const tracks=FACES.flatMap(face=>cycles(face).map((cycle,i)=>({face,cycle,
+    path:orbit(face,cycle[0]).map((p,j)=>(j?'L':'M')+p.x.toFixed(2)+','+p.y.toFixed(2)).join(' ')+' Z'})));
+  function hsv(rgb){
+    const [r,g,b]=rgb.map(x=>x/255),max=Math.max(r,g,b),min=Math.min(r,g,b),d=max-min;
+    let h=d===0?0:max===r?((g-b)/d)%6:max===g?(b-r)/d+2:(r-g)/d+4;
+    h=(h*60+360)%360;return {h,s:max===0?0:d/max,v:max};
+  }
+  function lab(rgb){
+    const [r,g,b]=rgb.map(v=>{v/=255;return v>.04045?((v+.055)/1.055)**2.4:v/12.92;});
+    const transform=t=>t>.008856?Math.cbrt(t):7.787*t+16/116;
+    const x=transform((r*.4124564+g*.3575761+b*.1804375)/.95047);
+    const y=transform(r*.2126729+g*.7151522+b*.072175);
+    const z=transform((r*.0193339+g*.119192+b*.9503041)/1.08883);
+    return [116*y-16,500*(x-y),200*(y-z)];
+  }
+  function classify(rgb,references=null){
+    const t=hsv(rgb),tl=lab(rgb);
+    const scores=Object.keys(COLORS).map(c=>{
+      const rr=references?.[c]||COLORS[c].rgb,r=hsv(rr),rl=lab(rr);
+      let hue=Math.abs(t.h-r.h);hue=Math.min(hue,360-hue);
+      let score;
+      if(c==='w')score=t.s*150+Math.abs(t.v-r.v)*12;
+      else score=hue*.8+Math.abs(t.s-r.s)*18+(1-t.s)*42;
+      if(references?.[c])score=score*.7+Math.hypot(tl[1]-rl[1],tl[2]-rl[2])*.25+Math.abs(tl[0]-rl[0])*.05;
+      if(t.s<.15&&c!=='w')score+=40;
+      return {color:c,score};
+    }).sort((a,b)=>a.score-b.score);
+    const margin=scores[1].score-scores[0].score;
+    return {color:scores[0].color,uncertain:t.v<.15||margin<10,margin};
+  }
+  function solveLinear(a,b){
+    const n=b.length,m=a.map((row,i)=>[...row,b[i]]);
+    for(let k=0;k<n;k++){
+      let best=k;for(let j=k+1;j<n;j++)if(Math.abs(m[j][k])>Math.abs(m[best][k]))best=j;
+      [m[k],m[best]]=[m[best],m[k]];
+      if(Math.abs(m[k][k])<1e-10)throw Error('Os quatro cantos precisam formar uma face, sem cruzamento.');
+      const d=m[k][k];for(let j=k;j<=n;j++)m[k][j]/=d;
+      for(let i=0;i<n;i++)if(i!==k){const f=m[i][k];for(let j=k;j<=n;j++)m[i][j]-=f*m[k][j];}
+    }
+    return m.map(row=>row[n]);
+  }
+  function homography(points){
+    if(points.length!==4)throw Error('Marque os quatro cantos.');
+    const turns=points.map((p,i)=>{
+      const q=points[(i+1)%4],r=points[(i+2)%4];return (q.x-p.x)*(r.y-q.y)-(q.y-p.y)*(r.x-q.x);
+    });
+    if(turns.some(x=>Math.abs(x)<1)||!(turns.every(x=>x>0)||turns.every(x=>x<0)))
+      throw Error('Ajuste os cantos em volta da face: 1 superior esquerdo, 2 superior direito, 3 inferior direito, 4 inferior esquerdo.');
+    const rows=[],b=[],uv=[[0,0],[1,0],[1,1],[0,1]];
+    uv.forEach(([u,v],i)=>{const {x,y}=points[i];rows.push([u,v,1,0,0,0,-u*x,-v*x],[0,0,0,u,v,1,-u*y,-v*y]);b.push(x,y);});
+    return solveLinear(rows,b);
+  }
+  function mapH(h,u,v){const d=h[6]*u+h[7]*v+1;return {x:(h[0]*u+h[1]*v+h[2])/d,y:(h[3]*u+h[4]*v+h[5])/d};}
+  function sampleQuad(image,points){
+    const h=homography(points),samples=[];
+    for(let row=0;row<3;row++)for(let col=0;col<3;col++){
+      const vals=[[],[],[]];
+      for(let y=-3;y<=3;y++)for(let x=-3;x<=3;x++){
+        const p=mapH(h,(col+.5+x*.025)/3,(row+.5+y*.025)/3);
+        const px=Math.max(0,Math.min(image.width-1,Math.round(p.x))),py=Math.max(0,Math.min(image.height-1,Math.round(p.y)));
+        const at=(py*image.width+px)*4;for(let c=0;c<3;c++)vals[c].push(image.data[at+c]);
+      }
+      samples.push(vals.map(v=>v.sort((a,b)=>a-b)[Math.floor(v.length/2)]));
+    }
+    return samples;
+  }
+  function rotateNine(a){return [a[6],a[3],a[0],a[7],a[4],a[1],a[8],a[5],a[2]];}
+  function counts(colors){return Object.fromEntries(Object.keys(COLORS).map(c=>[c,colors.filter(x=>x===c).length]));}
+  return {FACES,COLORS,DEFAULT_SCHEME,FACE_INFO,facelets,PERMS,dot,add,mul,cross,norm,rotate,
+    parseMove,apply,inverse,expand,solved,isSolved,validate,makeHistory,graphPoint,graphPositions,tracks,cycles,
+    hsv,lab,classify,homography,mapH,sampleQuad,rotateNine,counts};
+})();
+
+</script>
+<script id="renderCode">
+const CuboRender = (()=>{
+  const M=CuboModel,esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function graph(state,{move=null,t=0,active=null,mask='full',follow=null,showAll=true}={}){
+    const turn=move?M.parseMove(move):null,axis=turn?M.FACE_INFO[turn.face].normal:null;
+    const highlighted=active||(turn?.face);
+    let out='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560" role="img" aria-label="Gráfico dos 54 adesivos do cubo e seus percursos" class="graph-svg">';
+    out+='<rect width="560" height="560" rx="28" fill="#121b29"/><circle cx="280" cy="280" r="260" fill="none" stroke="#283449" stroke-width="1"/>';
+    if(showAll&&mask==='full')for(const tr of M.tracks)out+=`<path d="${tr.path}" fill="none" stroke="#a6b9ce" stroke-width="1.3" opacity=".23"/>`;
+    if(highlighted&&mask!=='none')for(const tr of M.tracks.filter(tr=>tr.face===highlighted))out+=`<path d="${tr.path}" fill="none" stroke="#ffa951" stroke-width="2.5" opacity=".87"/>`;
+    for(let i=0;i<54;i++){
+      const d=M.facelets[i],affected=turn&&M.dot(d.pos,axis)>.5&&M.PERMS[turn.face][i]!==i;
+      const p=affected?M.graphPoint(M.rotate(d.p,axis,turn.angle*t)):M.graphPositions[i];
+      const c=M.COLORS[state.colors[i]],selected=follow===state.ids[i],center=d.row===1&&d.col===1;
+      const name=c?c.name:'não preenchido',label=mask==='full'?(center?d.face:c?.symbol||'?'):center?d.face:'';
+      if(center)out+=`<circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="16" fill="none" stroke="#96a5b8" stroke-width="1.2" stroke-dasharray="2 3"/>`;
+      if(selected)out+=`<circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="18" fill="none" stroke="#ffffff" stroke-width="2"/>`;
+      out+=`<g data-slot="${i}" tabindex="0" role="button" aria-label="${d.face}${i%9+1}, ${name}${center?', centro fixo':''}" style="cursor:pointer"><title>${d.face}${i%9+1} · ${name}${center?' · centro fixo':''}</title><circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="12.5" fill="#111927"/><circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="10.5" fill="${c?.hex||'#344055'}" stroke="${selected?'#fff':affected?'#ffca85':'#263548'}" stroke-width="${selected?2.5:1.2}"/>`;
+      if(label)out+=`<text x="${p.x.toFixed(2)}" y="${(p.y+3).toFixed(2)}" text-anchor="middle" fill="${['w','y','o','g'].includes(state.colors[i])?'#122234':'#fff'}" font-size="${center?9:7.5}" font-family="Arial,sans-serif" font-weight="700" pointer-events="none">${label}</text>`;
+      out+='</g>';
+    }
+    out+='</svg>';return out;
+  }
+  function cube(state,{move=null,t=0,active=null,follow=null,view='auto',labels=true}={}){
+    const turn=move?M.parseMove(move):null,axis=turn?M.FACE_INFO[turn.face].normal:null,face=active||turn?.face;
+    let camera=[4,3,5];
+    if(view==='back')camera=[-4,3,-5];
+    else if(view==='bottom')camera=[4,-3,5];
+    else if(view==='auto'){
+      if(face==='L')camera=[-4,3,5];
+      if(face==='B')camera=[4,3,-5];
+      if(face==='D')camera=[4,-3,5];
+    }
+    const dir=M.norm(camera),right=M.norm(M.cross([0,1,0],dir)),up=M.cross(dir,right);
+    const project=v=>({x:220+M.dot(v,right)*65,y:177-M.dot(v,up)*65,z:M.dot(v,dir)});
+    const poly=(center,r,u,half)=>[[-1,1],[1,1],[1,-1],[-1,-1]].map(([a,b])=>M.add(center,M.add(M.mul(r,a*half),M.mul(u,b*half))));
+    const shapes=[],texts=[];
+    function put(points,normal,fill,stroke,sw){
+      if(M.dot(normal,dir)<.015)return;
+      const p=points.map(project);shapes.push({depth:p.reduce((s,v)=>s+v.z,0)/4,
+        s:`<polygon points="${p.map(v=>v.x.toFixed(2)+','+v.y.toFixed(2)).join(' ')}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round"/>`});
+    }
+    for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++){
+      const pos=[x,y,z],affected=turn&&M.dot(pos,axis)>.5;
+      for(const f of M.FACES){const d=M.FACE_INFO[f];let points=poly(M.add(M.mul(pos,1.01),M.mul(d.normal,.475)),d.right,d.up,.475),n=d.normal;
+        if(affected){points=points.map(p=>M.rotate(p,axis,turn.angle*t));n=M.rotate(n,axis,turn.angle*t);}
+        put(points,n,'#1b2432','#111722',1.4);
+      }
+    }
+    M.facelets.forEach((d,i)=>{
+      const affected=turn&&M.dot(d.pos,axis)>.5;let n=d.n,points=poly(d.p,d.right,d.up,.415),p=d.p;
+      if(affected){points=points.map(v=>M.rotate(v,axis,turn.angle*t));n=M.rotate(n,axis,turn.angle*t);p=M.rotate(p,axis,turn.angle*t);}
+      const c=M.COLORS[state.colors[i]],selected=follow===state.ids[i];
+      put(points,n,c?.hex||'#3b4657',selected?'#fff':face&&M.dot(d.pos,M.FACE_INFO[face].normal)>.5?'#ffd294':'#101721',selected?3.5:face&&d.face===face?2:1.8);
+      if(labels&&d.row===1&&d.col===1&&M.dot(n,dir)>.015){const q=project(p);texts.push(`<text x="${q.x.toFixed(2)}" y="${(q.y+5).toFixed(2)}" fill="${['w','y','o','g'].includes(state.colors[i])?'#182637':'#fff'}" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700">${d.face}</text>`);}
+    });
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 355" role="img" aria-label="Cubo em três dimensões com letras nas faces"><ellipse cx="220" cy="324" rx="117" ry="12" fill="#0a1018" opacity=".24"/>'+shapes.sort((a,b)=>a.depth-b.depth).map(o=>o.s).join('')+texts.join('')+'</svg>';
+  }
+  function net(state,follow=null){
+    const areas={U:'1 / 2',L:'2 / 1',F:'2 / 2',R:'2 / 3',B:'2 / 4',D:'3 / 2'};
+    return '<div class="net">'+M.FACES.map((f,fi)=>`<div class="net-face" style="grid-area:${areas[f]}"><span>${f} · ${M.FACE_INFO[f].name}</span><div class="net-grid">${Array.from({length:9},(_,j)=>{const i=fi*9+j,c=M.COLORS[state.colors[i]];return `<span title="${f}${j+1}: ${c?.name||'vazio'}" style="background:${c?.hex||'#344055'};${follow===state.ids[i]?'outline:2px solid #fff;outline-offset:1px;':''}">${j===4?f:''}</span>`;}).join('')}</div></div>`).join('')+'</div>';
+  }
+  return {graph,cube,net,esc};
+})();
+
+</script>
+<script id="solverSource" type="text/plain">
+(function() {
+  var B, BL, BR, Cnk, Cube, D, DB, DBL, DF, DFR, DL, DLF, DR, DRB, F, FL, FR, Include, L, N_FLIP, N_FRtoBR, N_PARITY, N_SLICE1, N_SLICE2, N_TWIST, N_UBtoDF, N_URFtoDLF, N_URtoDF, N_URtoUL, R, U, UB, UBR, UF, UFL, UL, ULB, UR, URF, allMoves1, allMoves2, computeMoveTable, computePruningTable, faceNames, faceNums, factorial, key, max, mergeURtoDF, moveTableParams, nextMoves1, nextMoves2, permutationIndex, pruning, pruningTableParams, rotateLeft, rotateRight, value,
+    indexOf = [].indexOf;
+
+  Cube = this.Cube || require('./cube');
+
+  // Centers
+  [U, R, F, D, L, B] = [0, 1, 2, 3, 4, 5];
+
+  // Corners
+  [URF, UFL, ULB, UBR, DFR, DLF, DBL, DRB] = [0, 1, 2, 3, 4, 5, 6, 7];
+
+  // Edges
+  [UR, UF, UL, UB, DR, DF, DL, DB, FR, FL, BL, BR] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+  //# Helpers
+
+  // n choose k, i.e. the binomial coeffiecient
+  Cnk = function(n, k) {
+    var i, j, s;
+    if (n < k) {
+      return 0;
+    }
+    if (k > n / 2) {
+      k = n - k;
+    }
+    s = 1;
+    i = n;
+    j = 1;
+    while (i !== n - k) {
+      s *= i;
+      s /= j;
+      i--;
+      j++;
+    }
+    return s;
+  };
+
+  // n!
+  factorial = function(n) {
+    var f, i, m, ref;
+    f = 1;
+    for (i = m = 2, ref = n; (2 <= ref ? m <= ref : m >= ref); i = 2 <= ref ? ++m : --m) {
+      f *= i;
+    }
+    return f;
+  };
+
+  // Maximum of two values
+  max = function(a, b) {
+    if (a > b) {
+      return a;
+    } else {
+      return b;
+    }
+  };
+
+  // Rotate elements between l and r left by one place
+  rotateLeft = function(array, l, r) {
+    var i, m, ref, ref1, tmp;
+    tmp = array[l];
+    for (i = m = ref = l, ref1 = r - 1; (ref <= ref1 ? m <= ref1 : m >= ref1); i = ref <= ref1 ? ++m : --m) {
+      array[i] = array[i + 1];
+    }
+    return array[r] = tmp;
+  };
+
+  // Rotate elements between l and r right by one place
+  rotateRight = function(array, l, r) {
+    var i, m, ref, ref1, tmp;
+    tmp = array[r];
+    for (i = m = ref = r, ref1 = l + 1; (ref <= ref1 ? m <= ref1 : m >= ref1); i = ref <= ref1 ? ++m : --m) {
+      array[i] = array[i - 1];
+    }
+    return array[l] = tmp;
+  };
+
+  // Generate a function that computes permutation indices.
+
+  // The permutation index actually encodes two indices: Combination,
+  // i.e. positions of the cubies start..end (A) and their respective
+  // permutation (B). The maximum value for B is
+
+  //   maxB = (end - start + 1)!
+
+  // and the index is A * maxB + B
+  permutationIndex = function(context, start, end, fromEnd = false) {
+    var i, maxAll, maxB, maxOur, our, permName;
+    maxOur = end - start;
+    maxB = factorial(maxOur + 1);
+    if (context === 'corners') {
+      maxAll = 7;
+      permName = 'cp';
+    } else {
+      maxAll = 11;
+      permName = 'ep';
+    }
+    our = (function() {
+      var m, ref, results;
+      results = [];
+      for (i = m = 0, ref = maxOur; (0 <= ref ? m <= ref : m >= ref); i = 0 <= ref ? ++m : --m) {
+        results.push(0);
+      }
+      return results;
+    })();
+    return function(index) {
+      var a, b, c, j, k, m, o, p, perm, q, ref, ref1, ref10, ref2, ref3, ref4, ref5, ref6, ref7, ref8, ref9, t, u, w, x, y, z;
+      if (index != null) {
+        for (i = m = 0, ref = maxOur; (0 <= ref ? m <= ref : m >= ref); i = 0 <= ref ? ++m : --m) {
+          // Reset our to [start..end]
+          our[i] = i + start;
+        }
+        b = index % maxB; // permutation
+        a = index / maxB | 0; // combination
+        
+        // Invalidate all edges
+        perm = this[permName];
+        for (i = o = 0, ref1 = maxAll; (0 <= ref1 ? o <= ref1 : o >= ref1); i = 0 <= ref1 ? ++o : --o) {
+          perm[i] = -1;
+        }
+// Generate permutation from index b
+        for (j = p = 1, ref2 = maxOur; (1 <= ref2 ? p <= ref2 : p >= ref2); j = 1 <= ref2 ? ++p : --p) {
+          k = b % (j + 1);
+          b = b / (j + 1) | 0;
+          // TODO: Implement rotateRightBy(our, 0, j, k)
+          while (k > 0) {
+            rotateRight(our, 0, j);
+            k--;
+          }
+        }
+        // Generate combination and set our edges
+        x = maxOur;
+        if (fromEnd) {
+          for (j = q = 0, ref3 = maxAll; (0 <= ref3 ? q <= ref3 : q >= ref3); j = 0 <= ref3 ? ++q : --q) {
+            c = Cnk(maxAll - j, x + 1);
+            if (a - c >= 0) {
+              perm[j] = our[maxOur - x];
+              a -= c;
+              x--;
+            }
+          }
+        } else {
+          for (j = t = ref4 = maxAll; (ref4 <= 0 ? t <= 0 : t >= 0); j = ref4 <= 0 ? ++t : --t) {
+            c = Cnk(j, x + 1);
+            if (a - c >= 0) {
+              perm[j] = our[x];
+              a -= c;
+              x--;
+            }
+          }
+        }
+        return this;
+      } else {
+        perm = this[permName];
+        for (i = u = 0, ref5 = maxOur; (0 <= ref5 ? u <= ref5 : u >= ref5); i = 0 <= ref5 ? ++u : --u) {
+          our[i] = -1;
+        }
+        a = b = x = 0;
+        // Compute the index a < ((maxAll + 1) choose (maxOur + 1)) and
+        // the permutation
+        if (fromEnd) {
+          for (j = w = ref6 = maxAll; (ref6 <= 0 ? w <= 0 : w >= 0); j = ref6 <= 0 ? ++w : --w) {
+            if ((start <= (ref7 = perm[j]) && ref7 <= end)) {
+              a += Cnk(maxAll - j, x + 1);
+              our[maxOur - x] = perm[j];
+              x++;
+            }
+          }
+        } else {
+          for (j = y = 0, ref8 = maxAll; (0 <= ref8 ? y <= ref8 : y >= ref8); j = 0 <= ref8 ? ++y : --y) {
+            if ((start <= (ref9 = perm[j]) && ref9 <= end)) {
+              a += Cnk(j, x + 1);
+              our[x] = perm[j];
+              x++;
+            }
+          }
+        }
+// Compute the index b < (maxOur + 1)! for the permutation
+        for (j = z = ref10 = maxOur; (ref10 <= 0 ? z <= 0 : z >= 0); j = ref10 <= 0 ? ++z : --z) {
+          k = 0;
+          while (our[j] !== start + j) {
+            rotateLeft(our, 0, j);
+            k++;
+          }
+          b = (j + 1) * b + k;
+        }
+        return a * maxB + b;
+      }
+    };
+  };
+
+  Include = {
+    // The twist of the 8 corners, 0 <= twist < 3^7. The orientation of
+    // the DRB corner is fully determined by the orientation of the other
+    // corners.
+    twist: function(twist) {
+      var i, m, o, ori, parity, v;
+      if (twist != null) {
+        parity = 0;
+        for (i = m = 6; m >= 0; i = --m) {
+          ori = twist % 3;
+          twist = (twist / 3) | 0;
+          this.co[i] = ori;
+          parity += ori;
+        }
+        this.co[7] = (3 - parity % 3) % 3;
+        return this;
+      } else {
+        v = 0;
+        for (i = o = 0; o <= 6; i = ++o) {
+          v = 3 * v + this.co[i];
+        }
+        return v;
+      }
+    },
+    // The flip of the 12 edges, 0 <= flip < 2^11. The orientation of the
+    // BR edge is fully determined by the orientation of the other edges.
+    flip: function(flip) {
+      var i, m, o, ori, parity, v;
+      if (flip != null) {
+        parity = 0;
+        for (i = m = 10; m >= 0; i = --m) {
+          ori = flip % 2;
+          flip = flip / 2 | 0;
+          this.eo[i] = ori;
+          parity += ori;
+        }
+        this.eo[11] = (2 - parity % 2) % 2;
+        return this;
+      } else {
+        v = 0;
+        for (i = o = 0; o <= 10; i = ++o) {
+          v = 2 * v + this.eo[i];
+        }
+        return v;
+      }
+    },
+    // Parity of the corner permutation
+    cornerParity: function() {
+      var i, j, m, o, ref, ref1, ref2, ref3, s;
+      s = 0;
+      for (i = m = ref = DRB, ref1 = URF + 1; (ref <= ref1 ? m <= ref1 : m >= ref1); i = ref <= ref1 ? ++m : --m) {
+        for (j = o = ref2 = i - 1, ref3 = URF; (ref2 <= ref3 ? o <= ref3 : o >= ref3); j = ref2 <= ref3 ? ++o : --o) {
+          if (this.cp[j] > this.cp[i]) {
+            s++;
+          }
+        }
+      }
+      return s % 2;
+    },
+    // Parity of the edges permutation. Parity of corners and edges are
+    // the same if the cube is solvable.
+    edgeParity: function() {
+      var i, j, m, o, ref, ref1, ref2, ref3, s;
+      s = 0;
+      for (i = m = ref = BR, ref1 = UR + 1; (ref <= ref1 ? m <= ref1 : m >= ref1); i = ref <= ref1 ? ++m : --m) {
+        for (j = o = ref2 = i - 1, ref3 = UR; (ref2 <= ref3 ? o <= ref3 : o >= ref3); j = ref2 <= ref3 ? ++o : --o) {
+          if (this.ep[j] > this.ep[i]) {
+            s++;
+          }
+        }
+      }
+      return s % 2;
+    },
+    // Permutation of the six corners URF, UFL, ULB, UBR, DFR, DLF
+    URFtoDLF: permutationIndex('corners', URF, DLF),
+    // Permutation of the three edges UR, UF, UL
+    URtoUL: permutationIndex('edges', UR, UL),
+    // Permutation of the three edges UB, DR, DF
+    UBtoDF: permutationIndex('edges', UB, DF),
+    // Permutation of the six edges UR, UF, UL, UB, DR, DF
+    URtoDF: permutationIndex('edges', UR, DF),
+    // Permutation of the equator slice edges FR, FL, BL and BR
+    FRtoBR: permutationIndex('edges', FR, BR, true)
+  };
+
+  for (key in Include) {
+    value = Include[key];
+    Cube.prototype[key] = value;
+  }
+
+  computeMoveTable = function(context, coord, size) {
+    var apply, cube, i, inner, j, k, m, move, o, p, ref, results;
+    // Loop through all valid values for the coordinate, setting cube's
+    // state in each iteration. Then apply each of the 18 moves to the
+    // cube, and compute the resulting coordinate.
+    apply = context === 'corners' ? 'cornerMultiply' : 'edgeMultiply';
+    cube = new Cube();
+    results = [];
+    for (i = m = 0, ref = size - 1; (0 <= ref ? m <= ref : m >= ref); i = 0 <= ref ? ++m : --m) {
+      cube[coord](i);
+      inner = [];
+      for (j = o = 0; o <= 5; j = ++o) {
+        move = Cube.moves[j];
+        for (k = p = 0; p <= 2; k = ++p) {
+          cube[apply](move);
+          inner.push(cube[coord]());
+        }
+        // 4th face turn restores the cube
+        cube[apply](move);
+      }
+      results.push(inner);
+    }
+    return results;
+  };
+
+  // Because we only have the phase 2 URtoDF coordinates, we need to
+  // merge the URtoUL and UBtoDF coordinates to URtoDF in the beginning
+  // of phase 2.
+  mergeURtoDF = (function() {
+    var a, b;
+    a = new Cube();
+    b = new Cube();
+    return function(URtoUL, UBtoDF) {
+      var i, m;
+      // Collisions can be found because unset are set to -1
+      a.URtoUL(URtoUL);
+      b.UBtoDF(UBtoDF);
+      for (i = m = 0; m <= 7; i = ++m) {
+        if (a.ep[i] !== -1) {
+          if (b.ep[i] !== -1) {
+            return -1; // collision
+          } else {
+            b.ep[i] = a.ep[i];
+          }
+        }
+      }
+      return b.URtoDF();
+    };
+  })();
+
+  N_TWIST = 2187; // 3^7 corner orientations
+
+  N_FLIP = 2048; // 2^11 possible edge flips
+
+  N_PARITY = 2; // 2 possible parities
+
+  N_FRtoBR = 11880; // 12!/(12-4)! permutations of FR..BR edges
+
+  N_SLICE1 = 495; // (12 choose 4) possible positions of FR..BR edges
+
+  N_SLICE2 = 24; // 4! permutations of FR..BR edges in phase 2
+
+  N_URFtoDLF = 20160; // 8!/(8-6)! permutations of URF..DLF corners
+
+  
+  // The URtoDF move table is only computed for phase 2 because the full
+  // table would have >650000 entries
+  N_URtoDF = 20160; // 8!/(8-6)! permutation of UR..DF edges in phase 2
+
+  N_URtoUL = 1320; // 12!/(12-3)! permutations of UR..UL edges
+
+  N_UBtoDF = 1320; // 12!/(12-3)! permutations of UB..DF edges
+
+  
+  // The move table for parity is so small that it's included here
+  Cube.moveTables = {
+    parity: [[1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1], [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0]],
+    twist: null,
+    flip: null,
+    FRtoBR: null,
+    URFtoDLF: null,
+    URtoDF: null,
+    URtoUL: null,
+    UBtoDF: null,
+    mergeURtoDF: null
+  };
+
+  // Other move tables are computed on the fly
+  moveTableParams = {
+    // name: [scope, size]
+    twist: ['corners', N_TWIST],
+    flip: ['edges', N_FLIP],
+    FRtoBR: ['edges', N_FRtoBR],
+    URFtoDLF: ['corners', N_URFtoDLF],
+    URtoDF: ['edges', N_URtoDF],
+    URtoUL: ['edges', N_URtoUL],
+    UBtoDF: ['edges', N_UBtoDF],
+    mergeURtoDF: [] // handled specially
+  };
+
+  Cube.computeMoveTables = function(...tables) {
+    var len, m, name, scope, size, tableName;
+    if (tables.length === 0) {
+      tables = (function() {
+        var results;
+        results = [];
+        for (name in moveTableParams) {
+          results.push(name);
+        }
+        return results;
+      })();
+    }
+    for (m = 0, len = tables.length; m < len; m++) {
+      tableName = tables[m];
+      if (this.moveTables[tableName] !== null) {
+        // Already computed
+        continue;
+      }
+      if (tableName === 'mergeURtoDF') {
+        this.moveTables.mergeURtoDF = (function() {
+          var UBtoDF, URtoUL, o, results;
+          results = [];
+          for (URtoUL = o = 0; o <= 335; URtoUL = ++o) {
+            results.push((function() {
+              var p, results1;
+              results1 = [];
+              for (UBtoDF = p = 0; p <= 335; UBtoDF = ++p) {
+                results1.push(mergeURtoDF(URtoUL, UBtoDF));
+              }
+              return results1;
+            })());
+          }
+          return results;
+        })();
+      } else {
+        [scope, size] = moveTableParams[tableName];
+        this.moveTables[tableName] = computeMoveTable(scope, tableName, size);
+      }
+    }
+    return this;
+  };
+
+  // Phase 1: All moves are valid
+  allMoves1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+
+  // The list of next valid phase 1 moves when the given face was turned
+  // in the last move
+  nextMoves1 = (function() {
+    var face, lastFace, m, next, o, p, power, results;
+    results = [];
+    for (lastFace = m = 0; m <= 5; lastFace = ++m) {
+      next = [];
+// Don't allow commuting moves, e.g. U U'. Also make sure that
+// opposite faces are always moved in the same order, i.e. allow
+// U D but no D U. This avoids sequences like U D U'.
+      for (face = o = 0; o <= 5; face = ++o) {
+        if (face !== lastFace && face !== lastFace - 3) {
+// single, double or inverse move
+          for (power = p = 0; p <= 2; power = ++p) {
+            next.push(face * 3 + power);
+          }
+        }
+      }
+      results.push(next);
+    }
+    return results;
+  })();
+
+  // Phase 2: Double moves of all faces plus quarter moves of U and D
+  allMoves2 = [0, 1, 2, 4, 7, 9, 10, 11, 13, 16];
+
+  nextMoves2 = (function() {
+    var face, lastFace, len, m, next, o, p, power, powers, results;
+    results = [];
+    for (lastFace = m = 0; m <= 5; lastFace = ++m) {
+      next = [];
+      for (face = o = 0; o <= 5; face = ++o) {
+        if (!(face !== lastFace && face !== lastFace - 3)) {
+          continue;
+        }
+        // Allow all moves of U and D and double moves of others
+        powers = face === 0 || face === 3 ? [0, 1, 2] : [1];
+        for (p = 0, len = powers.length; p < len; p++) {
+          power = powers[p];
+          next.push(face * 3 + power);
+        }
+      }
+      results.push(next);
+    }
+    return results;
+  })();
+
+  // 8 values are encoded in one number
+  pruning = function(table, index, value) {
+    var pos, shift, slot;
+    pos = index % 8;
+    slot = index >> 3;
+    shift = pos << 2;
+    if (value != null) {
+      // Set
+      table[slot] &= ~(0xF << shift);
+      table[slot] |= value << shift;
+      return value;
+    } else {
+      // Get
+      return (table[slot] & (0xF << shift)) >>> shift;
+    }
+  };
+
+  computePruningTable = function(phase, size, currentCoords, nextIndex) {
+    var current, depth, done, index, len, m, move, moves, next, o, ref, table, x;
+    // Initialize all values to 0xF
+    table = (function() {
+      var m, ref, results;
+      results = [];
+      for (x = m = 0, ref = Math.ceil(size / 8) - 1; (0 <= ref ? m <= ref : m >= ref); x = 0 <= ref ? ++m : --m) {
+        results.push(0xFFFFFFFF);
+      }
+      return results;
+    })();
+    if (phase === 1) {
+      moves = allMoves1;
+    } else {
+      moves = allMoves2;
+    }
+    depth = 0;
+    pruning(table, 0, depth);
+    done = 1;
+    // In each iteration, take each state found in the previous depth and
+    // compute the next state. Stop when all states have been assigned a
+    // depth.
+    while (done !== size) {
+      for (index = m = 0, ref = size - 1; (0 <= ref ? m <= ref : m >= ref); index = 0 <= ref ? ++m : --m) {
+        if (!(pruning(table, index) === depth)) {
+          continue;
+        }
+        current = currentCoords(index);
+        for (o = 0, len = moves.length; o < len; o++) {
+          move = moves[o];
+          next = nextIndex(current, move);
+          if (pruning(table, next) === 0xF) {
+            pruning(table, next, depth + 1);
+            done++;
+          }
+        }
+      }
+      depth++;
+    }
+    return table;
+  };
+
+  Cube.pruningTables = {
+    sliceTwist: null,
+    sliceFlip: null,
+    sliceURFtoDLFParity: null,
+    sliceURtoDFParity: null
+  };
+
+  pruningTableParams = {
+    // name: [phase, size, currentCoords, nextIndex]
+    sliceTwist: [
+      1,
+      N_SLICE1 * N_TWIST,
+      function(index) {
+        return [index % N_SLICE1,
+      index / N_SLICE1 | 0];
+      },
+      function(current,
+      move) {
+        var newSlice,
+      newTwist,
+      slice,
+      twist;
+        [slice,
+      twist] = current;
+        newSlice = Cube.moveTables.FRtoBR[slice * 24][move] / 24 | 0;
+        newTwist = Cube.moveTables.twist[twist][move];
+        return newTwist * N_SLICE1 + newSlice;
+      }
+    ],
+    sliceFlip: [
+      1,
+      N_SLICE1 * N_FLIP,
+      function(index) {
+        return [index % N_SLICE1,
+      index / N_SLICE1 | 0];
+      },
+      function(current,
+      move) {
+        var flip,
+      newFlip,
+      newSlice,
+      slice;
+        [slice,
+      flip] = current;
+        newSlice = Cube.moveTables.FRtoBR[slice * 24][move] / 24 | 0;
+        newFlip = Cube.moveTables.flip[flip][move];
+        return newFlip * N_SLICE1 + newSlice;
+      }
+    ],
+    sliceURFtoDLFParity: [
+      2,
+      N_SLICE2 * N_URFtoDLF * N_PARITY,
+      function(index) {
+        return [index % 2,
+      (index / 2 | 0) % N_SLICE2,
+      (index / 2 | 0) / N_SLICE2 | 0];
+      },
+      function(current,
+      move) {
+        var URFtoDLF,
+      newParity,
+      newSlice,
+      newURFtoDLF,
+      parity,
+      slice;
+        [parity,
+      slice,
+      URFtoDLF] = current;
+        newParity = Cube.moveTables.parity[parity][move];
+        newSlice = Cube.moveTables.FRtoBR[slice][move];
+        newURFtoDLF = Cube.moveTables.URFtoDLF[URFtoDLF][move];
+        return (newURFtoDLF * N_SLICE2 + newSlice) * 2 + newParity;
+      }
+    ],
+    sliceURtoDFParity: [
+      2,
+      N_SLICE2 * N_URtoDF * N_PARITY,
+      function(index) {
+        return [index % 2,
+      (index / 2 | 0) % N_SLICE2,
+      (index / 2 | 0) / N_SLICE2 | 0];
+      },
+      function(current,
+      move) {
+        var URtoDF,
+      newParity,
+      newSlice,
+      newURtoDF,
+      parity,
+      slice;
+        [parity,
+      slice,
+      URtoDF] = current;
+        newParity = Cube.moveTables.parity[parity][move];
+        newSlice = Cube.moveTables.FRtoBR[slice][move];
+        newURtoDF = Cube.moveTables.URtoDF[URtoDF][move];
+        return (newURtoDF * N_SLICE2 + newSlice) * 2 + newParity;
+      }
+    ]
+  };
+
+  Cube.computePruningTables = function(...tables) {
+    var len, m, name, params, tableName;
+    if (tables.length === 0) {
+      tables = (function() {
+        var results;
+        results = [];
+        for (name in pruningTableParams) {
+          results.push(name);
+        }
+        return results;
+      })();
+    }
+    for (m = 0, len = tables.length; m < len; m++) {
+      tableName = tables[m];
+      if (this.pruningTables[tableName] !== null) {
+        // Already computed
+        continue;
+      }
+      params = pruningTableParams[tableName];
+      this.pruningTables[tableName] = computePruningTable(...params);
+    }
+    return this;
+  };
+
+  Cube.initSolver = function() {
+    Cube.computeMoveTables();
+    return Cube.computePruningTables();
+  };
+
+  Cube.prototype.solveUpright = function(maxDepth = 22) {
+    var State, freeStates, moveNames, phase1, phase1search, phase2, phase2search, solution, state, x;
+    // Names for all moves, i.e. U, U2, U', F, F2, ...
+    moveNames = (function() {
+      var face, faceName, m, o, power, powerName, result;
+      faceName = ['U', 'R', 'F', 'D', 'L', 'B'];
+      powerName = ['', '2', "'"];
+      result = [];
+      for (face = m = 0; m <= 5; face = ++m) {
+        for (power = o = 0; o <= 2; power = ++o) {
+          result.push(faceName[face] + powerName[power]);
+        }
+      }
+      return result;
+    })();
+    State = class State {
+      constructor(cube) {
+        this.parent = null;
+        this.lastMove = null;
+        this.depth = 0;
+        if (cube) {
+          this.init(cube);
+        }
+      }
+
+      init(cube) {
+        // Phase 1 coordinates
+        this.flip = cube.flip();
+        this.twist = cube.twist();
+        this.slice = cube.FRtoBR() / N_SLICE2 | 0;
+        // Phase 2 coordinates
+        this.parity = cube.cornerParity();
+        this.URFtoDLF = cube.URFtoDLF();
+        this.FRtoBR = cube.FRtoBR();
+        // These are later merged to URtoDF when phase 2 begins
+        this.URtoUL = cube.URtoUL();
+        this.UBtoDF = cube.UBtoDF();
+        return this;
+      }
+
+      solution() {
+        if (this.parent) {
+          return this.parent.solution() + moveNames[this.lastMove] + ' ';
+        } else {
+          return '';
+        }
+      }
+
+      //# Helpers
+      move(table, index, move) {
+        return Cube.moveTables[table][index][move];
+      }
+
+      pruning(table, index) {
+        return pruning(Cube.pruningTables[table], index);
+      }
+
+      //# Phase 1
+
+        // Return the next valid phase 1 moves for this state
+      moves1() {
+        if (this.lastMove !== null) {
+          return nextMoves1[this.lastMove / 3 | 0];
+        } else {
+          return allMoves1;
+        }
+      }
+
+      // Compute the minimum number of moves to the end of phase 1
+      minDist1() {
+        var d1, d2;
+        // The maximum number of moves to the end of phase 1 wrt. the
+        // combination flip and slice coordinates only
+        d1 = this.pruning('sliceFlip', N_SLICE1 * this.flip + this.slice);
+        // The combination of twist and slice coordinates
+        d2 = this.pruning('sliceTwist', N_SLICE1 * this.twist + this.slice);
+        // The true minimal distance is the maximum of these two
+        return max(d1, d2);
+      }
+
+      // Compute the next phase 1 state for the given move
+      next1(move) {
+        var next;
+        next = freeStates.pop();
+        next.parent = this;
+        next.lastMove = move;
+        next.depth = this.depth + 1;
+        next.flip = this.move('flip', this.flip, move);
+        next.twist = this.move('twist', this.twist, move);
+        next.slice = this.move('FRtoBR', this.slice * 24, move) / 24 | 0;
+        return next;
+      }
+
+      //# Phase 2
+
+        // Return the next valid phase 2 moves for this state
+      moves2() {
+        if (this.lastMove !== null) {
+          return nextMoves2[this.lastMove / 3 | 0];
+        } else {
+          return allMoves2;
+        }
+      }
+
+      // Compute the minimum number of moves to the solved cube
+      minDist2() {
+        var d1, d2, index1, index2;
+        index1 = (N_SLICE2 * this.URtoDF + this.FRtoBR) * N_PARITY + this.parity;
+        d1 = this.pruning('sliceURtoDFParity', index1);
+        index2 = (N_SLICE2 * this.URFtoDLF + this.FRtoBR) * N_PARITY + this.parity;
+        d2 = this.pruning('sliceURFtoDLFParity', index2);
+        return max(d1, d2);
+      }
+
+      // Initialize phase 2 coordinates
+      init2(top = true) {
+        if (this.parent === null) {
+          return;
+        }
+        // For other states, the phase 2 state is computed based on
+        // parent's state.
+        // Already assigned for the initial state
+        this.parent.init2(false);
+        this.URFtoDLF = this.move('URFtoDLF', this.parent.URFtoDLF, this.lastMove);
+        this.FRtoBR = this.move('FRtoBR', this.parent.FRtoBR, this.lastMove);
+        this.parity = this.move('parity', this.parent.parity, this.lastMove);
+        this.URtoUL = this.move('URtoUL', this.parent.URtoUL, this.lastMove);
+        this.UBtoDF = this.move('UBtoDF', this.parent.UBtoDF, this.lastMove);
+        if (top) {
+          // This is the initial phase 2 state. Get the URtoDF coordinate
+          // by merging URtoUL and UBtoDF
+          return this.URtoDF = this.move('mergeURtoDF', this.URtoUL, this.UBtoDF);
+        }
+      }
+
+      // Compute the next phase 2 state for the given move
+      next2(move) {
+        var next;
+        next = freeStates.pop();
+        next.parent = this;
+        next.lastMove = move;
+        next.depth = this.depth + 1;
+        next.URFtoDLF = this.move('URFtoDLF', this.URFtoDLF, move);
+        next.FRtoBR = this.move('FRtoBR', this.FRtoBR, move);
+        next.parity = this.move('parity', this.parity, move);
+        next.URtoDF = this.move('URtoDF', this.URtoDF, move);
+        return next;
+      }
+
+    };
+    solution = null;
+    phase1search = function(state) {
+      var depth, m, ref, results;
+      results = [];
+      for (depth = m = 1, ref = maxDepth; (1 <= ref ? m <= ref : m >= ref); depth = 1 <= ref ? ++m : --m) {
+        phase1(state, depth);
+        if (solution !== null) {
+          break;
+        } else {
+          results.push(void 0);
+        }
+      }
+      return results;
+    };
+    phase1 = function(state, depth) {
+      var len, m, move, next, ref, ref1, results;
+      if (depth === 0) {
+        if (state.minDist1() === 0) {
+          // Make sure we don't start phase 2 with a phase 2 move as the
+          // last move in phase 1, because phase 2 would then repeat the
+          // same move.
+          if (state.lastMove === null || (ref = state.lastMove, indexOf.call(allMoves2, ref) < 0)) {
+            return phase2search(state);
+          }
+        }
+      } else if (depth > 0) {
+        if (state.minDist1() <= depth) {
+          ref1 = state.moves1();
+          results = [];
+          for (m = 0, len = ref1.length; m < len; m++) {
+            move = ref1[m];
+            next = state.next1(move);
+            phase1(next, depth - 1);
+            freeStates.push(next);
+            if (solution !== null) {
+              break;
+            } else {
+              results.push(void 0);
+            }
+          }
+          return results;
+        }
+      }
+    };
+    phase2search = function(state) {
+      var depth, m, ref, results;
+      // Initialize phase 2 coordinates
+      state.init2();
+      results = [];
+      for (depth = m = 1, ref = maxDepth - state.depth; (1 <= ref ? m <= ref : m >= ref); depth = 1 <= ref ? ++m : --m) {
+        phase2(state, depth);
+        if (solution !== null) {
+          break;
+        } else {
+          results.push(void 0);
+        }
+      }
+      return results;
+    };
+    phase2 = function(state, depth) {
+      var len, m, move, next, ref, results;
+      if (depth === 0) {
+        if (state.minDist2() === 0) {
+          return solution = state.solution();
+        }
+      } else if (depth > 0) {
+        if (state.minDist2() <= depth) {
+          ref = state.moves2();
+          results = [];
+          for (m = 0, len = ref.length; m < len; m++) {
+            move = ref[m];
+            next = state.next2(move);
+            phase2(next, depth - 1);
+            freeStates.push(next);
+            if (solution !== null) {
+              break;
+            } else {
+              results.push(void 0);
+            }
+          }
+          return results;
+        }
+      }
+    };
+    freeStates = (function() {
+      var m, ref, results;
+      results = [];
+      for (x = m = 0, ref = maxDepth + 1; (0 <= ref ? m <= ref : m >= ref); x = 0 <= ref ? ++m : --m) {
+        results.push(new State());
+      }
+      return results;
+    })();
+    state = freeStates.pop().init(this);
+    phase1search(state);
+    freeStates.push(state);
+    if (solution == null) {
+      return null;
+    }
+    // Trim the trailing space and return
+    return solution.trim();
+  };
+
+  faceNums = {
+    U: 0,
+    R: 1,
+    F: 2,
+    D: 3,
+    L: 4,
+    B: 5
+  };
+
+  faceNames = {
+    0: 'U',
+    1: 'R',
+    2: 'F',
+    3: 'D',
+    4: 'L',
+    5: 'B'
+  };
+
+  Cube.prototype.solve = function(maxDepth = 22) {
+    var clone, len, m, move, ref, rotation, solution, upright, uprightSolution;
+    clone = this.clone();
+    upright = clone.upright();
+    clone.move(upright);
+    rotation = new Cube().move(upright).center;
+    uprightSolution = clone.solveUpright(maxDepth);
+    if (uprightSolution == null) {
+      return null;
+    }
+    solution = [];
+    ref = uprightSolution.split(' ');
+    for (m = 0, len = ref.length; m < len; m++) {
+      move = ref[m];
+      solution.push(faceNames[rotation[faceNums[move[0]]]]);
+      if (move.length > 1) {
+        solution[solution.length - 1] += move[1];
+      }
+    }
+    return solution.join(' ');
+  };
+
+  Cube.scramble = function() {
+    return Cube.inverse(Cube.random().solve());
+  };
+
+}).call(this);
+
+
+</script>
+<script id="workerCode" type="text/plain">
+/* Executado no Worker criado a partir do próprio HTML; não faz requisições de rede. */
+let ready=false;
+self.onmessage=async function(event){
+  const d=event.data;if(d.type!=='solve')return;
+  try{
+    if(!ready){
+      const jobs=[...['twist','flip','FRtoBR','URFtoDLF','URtoDF','URtoUL','UBtoDF','mergeURtoDF'].map(name=>({kind:'move',name})),
+        ...['sliceTwist','sliceFlip','sliceURFtoDLFParity','sliceURtoDFParity'].map(name=>({kind:'prune',name}))];
+      for(let i=0;i<jobs.length;i++){
+        self.postMessage({type:'progress',message:`Preparando as tabelas de movimentos: ${i+1} de ${jobs.length}…`,percent:Math.round(i/jobs.length*85)});
+        if(jobs[i].kind==='move')Cube.computeMoveTables(jobs[i].name);else Cube.computePruningTables(jobs[i].name);
+        await new Promise(resolve=>setTimeout(resolve,0));
+      }
+      ready=true;
+    }
+    self.postMessage({type:'progress',message:'Calculando e verificando a sequência para suas seis faces…',percent:92});
+    const cube=Cube.fromString(d.text);if(cube.asString()!==d.text)throw Error('O estado recebido não forma um cubo válido.');
+    let algorithm=cube.solve(22);if(algorithm===null)algorithm=cube.solve(24);
+    if(algorithm===null||!cube.clone().move(algorithm).isSolved())throw Error('Não foi possível obter uma sequência verificada. Confira as seis faces e tente novamente.');
+    self.postMessage({type:'result',id:d.id,algorithm});
+  }catch(error){self.postMessage({type:'error',id:d.id,message:error.message||'O cálculo não pôde ser concluído.'});}
+};
+
+</script>
+<script id="controllerCode">
+const CuboApp=(()=>{
+  'use strict';
+  const M=CuboModel,R=CuboRender,$=id=>document.getElementById(id),ORDER=['F','R','B','L','U','D'],STORE='cubo-em-movimento-v1';
+  let scheme={...M.DEFAULT_SCHEME},colors=Array(54).fill(null),confirmed=Object.fromEntries(M.FACES.map(f=>[f,false]));
+  let samples={},overrides={},uncertain={},photoRotations={},photoVisuals={},currentFace='F',paint='g',currentTab='capture';
+  let session=null,backupSession=null,history=[],previewing=false,undoPending=false,follow=null,hintExtra=0;
+  let visualState=null,animation=null,worker=null,workerURL=null,pendingSolve=null,solverTimeout=null,solveGeneration=0;
+  let cameraStream=null,cameraGeneration=0,photoDrag=null,toastTimer=null,storageWarned=false;
+  let lessonFace='R',lessonState={colors:M.solved(),ids:Array.from({length:54},(_,i)=>i)},lessonBusy=false,lessonGeneration=0;
+  const emptyColors=()=>M.FACES.flatMap(f=>Array.from({length:9},(_,j)=>j===4?scheme[f]:null));
+  const index=f=>M.FACES.indexOf(f)*9;
+  const label=f=>M.FACE_INFO[f].name;
+  const colorName=f=>M.COLORS[scheme[f]].name;
+  const icon=(id)=>`<svg aria-hidden="true"><use href="#i-${id}"/></svg>`;
+  function notify(text){$('toast').textContent=text;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,4500);}
+  function confirmUI(title,text,accept='Continuar'){
+    cancelAnimation();stopCamera();
+    return new Promise(resolve=>{
+      const d=$('confirmDialog');$('dialogTitle').textContent=title;$('dialogText').textContent=text;$('dialogAccept').textContent=accept;
+      const close=()=>{d.removeEventListener('close',close);resolve(d.returnValue==='accept');};d.addEventListener('close',close);d.returnValue='cancel';d.showModal();
+    });
+  }
+  function persist(){
+    try{
+      const storedSession=session?.isDemo?backupSession:session;
+      localStorage.setItem(STORE,JSON.stringify({version:1,scheme,colors,confirmed,samples,overrides,uncertain,photoRotations,currentFace,
+        session:storedSession?{initial:storedSession.initial,moves:storedSession.moves,cursor:storedSession.cursor,isDemo:false}:null,
+        mask:$('maskSelect').value,speed:$('speedSelect').value}));
+    }catch(e){if(!storageWarned){storageWarned=true;notify('O navegador não permitiu salvar o progresso. Mantenha esta aba aberta.');}}
+  }
+  function load(){
+    colors=emptyColors();
+    try{
+      const data=JSON.parse(localStorage.getItem(STORE)||'null');if(!data||data.version!==1)return;
+      if(!M.FACES.every(f=>M.COLORS[data.scheme?.[f]])||new Set(Object.values(data.scheme)).size!==6)return;
+      if(!Array.isArray(data.colors)||data.colors.length!==54||data.colors.some(c=>c!==null&&!M.COLORS[c]))return;
+      scheme={...data.scheme};colors=data.colors.slice();
+      M.FACES.forEach(f=>{colors[index(f)+4]=scheme[f];confirmed[f]=!!data.confirmed?.[f]&&colors.slice(index(f),index(f)+9).every(c=>M.COLORS[c]);});
+      if(M.FACES.includes(data.currentFace))currentFace=data.currentFace;
+      for(const f of M.FACES){
+        const s=data.samples?.[f];if(Array.isArray(s)&&s.length===9&&s.every(a=>Array.isArray(a)&&a.length===3&&a.every(v=>Number.isFinite(v)&&v>=0&&v<=255)))samples[f]=s;
+        const o=data.overrides?.[f];if(Array.isArray(o)&&o.length===9&&o.every(c=>c===null||c===undefined||M.COLORS[c]))overrides[f]=o;
+        if(Array.isArray(data.uncertain?.[f])&&data.uncertain[f].length===9)uncertain[f]=data.uncertain[f].map(Boolean);
+        photoRotations[f]=Number.isInteger(data.photoRotations?.[f])?data.photoRotations[f]%4:0;
+      }
+      if(['full','partial','none'].includes(data.mask))$('maskSelect').value=data.mask;
+      if(['2200','1400','750'].includes(data.speed))$('speedSelect').value=data.speed;
+      const s=data.session;
+      if(s&&Array.isArray(s.initial)&&M.validate(s.initial,scheme).ok&&Array.isArray(s.moves)&&s.moves.length<=200
+        &&s.moves.every(m=>/^[URFDLB]'?$/.test(m))&&Number.isInteger(s.cursor)&&s.cursor>=0&&s.cursor<=s.moves.length){
+        const h=M.makeHistory(s.initial,s.moves);
+        if(M.isSolved(h[h.length-1].colors)){session={...s,isDemo:false};history=h;$('resumeNotice').hidden=false;}
+      }
+      paint=scheme[currentFace];
+    }catch(e){colors=emptyColors();}
+  }
+  function setTab(tab,scroll=true){
+    if(!['capture','solve','learn'].includes(tab))return;
+    if(currentTab!==tab){cancelAnimation();stopCamera();previewing=false;undoPending=false;}
+    currentTab=tab;
+    document.querySelectorAll('[data-tab]').forEach(b=>{const active=b.dataset.tab===tab;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;});
+    $('panelCapture').hidden=tab!=='capture';$('panelSolve').hidden=tab!=='solve';$('panelLearn').hidden=tab!=='learn';
+    if(tab==='solve')renderSession();
+    if(tab==='learn')renderLesson();
+    if(scroll)$('main').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  }
+  function schemeOptions(selected){return Object.entries(M.COLORS).map(([c,d])=>`<option value="${c}"${c===selected?' selected':''}>${d.name}</option>`).join('');}
+  function renderScheme(){$('schemeGrid').innerHTML=M.FACES.map(f=>`<div><label for="center-${f}">${f} · ${label(f)}</label><select id="center-${f}">${schemeOptions(scheme[f])}</select></div>`).join('');}
+  function invalidateSolution(){if(session&&!session.isDemo){session=null;history=[];}backupSession=null;}
+  function renderCapture(){
+    const fi=index(currentFace),info=M.FACE_INFO[currentFace],n=Object.values(confirmed).filter(Boolean).length;
+    $('faceStep').textContent=`FACE ${ORDER.indexOf(currentFace)+1} DE 6`;
+    $('faceTitle').textContent=`${currentFace} · ${info.name}`;
+    $('faceSubtitle').textContent=`O centro ${colorName(currentFace)} identifica esta face.`;
+    $('registeredBadge').textContent=`${n}/6 faces`;
+    $('orientation').innerHTML=info.neighbors.map((f,i)=>`<div class="anchor"><span class="dot" style="background:${M.COLORS[scheme[f]].hex}"></span><div>${['Acima da face','À direita da face','Abaixo da face','À esquerda da face'][i]}<strong>${label(f)} · ${colorName(f)}</strong></div></div>`).join('');
+    $('orientationHelp').textContent=`Para fotografar ${info.name}, mantenha o centro ${colorName(info.neighbors[0])} na borda de cima e o centro ${colorName(info.neighbors[1])} na borda direita. O centro ${colorName(currentFace)} deve estar no meio da foto.`;
+    $('faceTabs').innerHTML=ORDER.map(f=>`<button class="face-tab${f===currentFace?' active':''}${confirmed[f]?' complete':''}" data-face="${f}" aria-label="${label(f)}: ${confirmed[f]?'confirmada':'pendente'}" aria-pressed="${f===currentFace}"><div class="color-dot" style="background:${M.COLORS[scheme[f]].hex}"></div><strong>${f}</strong><small>${confirmed[f]?'✓ Pronta':'Pendente'}</small></button>`).join('');
+    $('faceEditor').innerHTML=Array.from({length:9},(_,j)=>{
+      const c=colors[fi+j],d=M.COLORS[c];return `<button class="sticker${j===4?' center':''}${uncertain[currentFace]?.[j]?' uncertain':''}" data-cell="${j}" style="background:${d?.hex||'#e5e9e5'};color:${['w','y','o','g',null].includes(c)?'#1b2b37':'#fff'}" aria-label="Posição ${j+1}: ${d?.name||'vazia'}${j===4?', centro fixo':''}${uncertain[currentFace]?.[j]?', conferir leitura':''}"${j===4?' aria-disabled="true"':''}><span class="num">${j+1}</span><span class="symbol">${j===4?currentFace:d?.symbol||'+'}</span></button>`;
+    }).join('');
+    const counts=M.counts(colors);
+    $('palette').innerHTML=Object.entries(M.COLORS).map(([c,d])=>`<button class="color-button" data-color="${c}" aria-pressed="${paint===c}" aria-label="Pintar de ${d.name}, ${counts[c]} de 9 adesivos"><span class="color-swatch" style="background:${d.hex}"></span><span>${d.name}<br><small class="${counts[c]>9?'count-bad':counts[c]===9?'count-good':'muted'}">${counts[c]}/9</small></span></button>`).join('');
+    $('eraseBtn').style.fontWeight=paint===null?'800':'400';
+    const filled=colors.slice(fi,fi+9).filter(Boolean).length;
+    const doubts=(uncertain[currentFace]||[]).filter(Boolean).length;
+    $('faceStatus').textContent=confirmed[currentFace]?'Face confirmada. Se editar uma cor, confirme novamente.':`${filled}/9 posições preenchidas.${doubts?' '+doubts+' leitura(s) com “?”: confira as cores.':''}`;
+    $('confirmFaceBtn').disabled=filled!==9;
+    $('confirmFaceBtn').innerHTML=icon('check')+(n===6?'Confirmar esta face':currentFace===ORDER[5]?'Confirmar última face':'Confirmar face e seguir');
+    $('solveBtn').disabled=n!==6||colors.some(c=>!c);
+    $('captureReadyTitle').textContent=n===6?'As seis faces foram registradas':`${n} de 6 faces registradas`;
+    $('captureReadyText').textContent=n===6?'Confira as cores antes de gerar. O app vai verificar se esse estado pode existir em um cubo 3×3.':'Cada cor precisa aparecer nove vezes. O app também verifica se as peças formam um cubo possível.';
+    $('calibrateBtn').disabled=M.FACES.some(f=>!samples[f]);
+  }
+  function selectFace(face){
+    stopCamera();currentFace=face;paint=scheme[face];photoDrag=null;
+    $('photoStatus').textContent='';$('validationErrors').hidden=true;
+    renderCapture();renderPhoto();persist();
+  }
+  function paintCell(cell){
+    if(cell===4){notify('O centro define a face e fica fixo. Para mudar a combinação, abra “Meu cubo tem outros centros”.');return;}
+    if(!Number.isInteger(cell)||cell<0||cell>8)return;
+    colors[index(currentFace)+cell]=paint;confirmed[currentFace]=false;
+    if(!overrides[currentFace])overrides[currentFace]=Array(9).fill(null);
+    overrides[currentFace][cell]=paint;
+    if(uncertain[currentFace])uncertain[currentFace][cell]=false;
+    invalidateSolution();$('validationErrors').hidden=true;renderCapture();persist();
+  }
+  function confirmFace(){
+    const fi=index(currentFace);if(colors.slice(fi,fi+9).some(c=>!c))return;
+    confirmed[currentFace]=true;persist();
+    const next=ORDER.find(f=>!confirmed[f]);
+    if(next){selectFace(next);notify(`Face confirmada. Agora registre ${label(next)}.`);}
+    else{renderCapture();notify('As seis faces estão prontas. Confira as cores e gere a solução.');$('solveBtn').scrollIntoView({behavior:'smooth',block:'center'});}
+  }
+  function renderPhoto(){
+    const photo=photoVisuals[currentFace];
+    $('cameraVideo').hidden=true;$('cameraGuide').hidden=true;$('photoEmpty').hidden=!!photo;$('photoCanvas').hidden=!photo;
+    $('readPhotoBtn').disabled=!photo;
+    $('photoHelp').textContent=photo?'Arraste os pontos 1, 2, 3 e 4 até os quatro cantos da face. A grade deve acompanhar os nove adesivos.':'No computador, você também pode preencher as cores manualmente.';
+    if(photo)drawPhoto();
+  }
+  function drawPhoto(){
+    const p=photoVisuals[currentFace];if(!p)return;
+    const canvas=$('photoCanvas');canvas.width=p.image.width;canvas.height=p.image.height;
+    const ctx=canvas.getContext('2d');ctx.drawImage(p.image,0,0);ctx.lineWidth=Math.max(2,canvas.width/240);
+    let h=null;try{h=M.homography(p.points);}catch(e){}
+    ctx.strokeStyle='#ffcc7d';ctx.shadowColor='#0009';ctx.shadowBlur=3;
+    if(h){for(let k=0;k<=3;k++){
+      for(const vertical of [true,false]){const a=M.mapH(h,vertical?k/3:0,vertical?0:k/3),b=M.mapH(h,vertical?k/3:1,vertical?1:k/3);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+    }}else{ctx.beginPath();p.points.forEach((a,i)=>i?ctx.lineTo(a.x,a.y):ctx.moveTo(a.x,a.y));ctx.closePath();ctx.stroke();}
+    ctx.shadowBlur=0;
+    p.points.forEach((a,i)=>{const rad=Math.max(18,canvas.width/30);ctx.beginPath();ctx.arc(a.x,a.y,rad,0,2*Math.PI);ctx.fillStyle='#17283f';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='#fff';ctx.font=`700 ${rad}px sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(i+1),a.x,a.y);});
+  }
+  function makePhoto(image){
+    const original=document.createElement('canvas'),scale=Math.min(1,720/Math.max(image.width||image.videoWidth,image.height||image.videoHeight));
+    original.width=Math.round((image.videoWidth||image.width)*scale);original.height=Math.round((image.videoHeight||image.height)*scale);
+    if(!original.width||!original.height)throw Error('A câmera ainda não está pronta. Aguarde a imagem aparecer.');
+    original.getContext('2d').drawImage(image,0,0,original.width,original.height);
+    const size=Math.min(original.width,original.height)*.78,x=(original.width-size)/2,y=(original.height-size)/2;
+    photoVisuals[currentFace]={image:original,points:[{x,y},{x:x+size,y},{x:x+size,y:y+size},{x,y:y+size}]};
+    photoRotations[currentFace]=0;renderPhoto();$('photoStatus').textContent='Foto aberta. Ajuste a marcação e clique em “Ler as 9 cores”.';
+  }
+  async function loadPhoto(file){
+    if(!file)return;if(file.size>40*1024*1024){notify('Escolha uma foto com menos de 40 MB.');return;}
+    stopCamera();const faceAtStart=currentFace,url=URL.createObjectURL(file);
+    try{
+      const image=await new Promise((resolve,reject)=>{const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(Error('Não foi possível abrir a foto. Tente uma imagem JPG ou PNG.'));img.src=url;});
+      if(faceAtStart!==currentFace)return;makePhoto(image);
+    }catch(e){$('photoStatus').textContent=e.message;}finally{URL.revokeObjectURL(url);}
+  }
+  function readPhoto(){
+    const p=photoVisuals[currentFace];if(!p)return;
+    try{
+      let raw=M.sampleQuad(p.image.getContext('2d').getImageData(0,0,p.image.width,p.image.height),p.points);
+      for(let k=0;k<(photoRotations[currentFace]||0);k++)raw=M.rotateNine(raw);
+      samples[currentFace]=raw;overrides[currentFace]=Array(9).fill(null);
+      const fi=index(currentFace),refs=references(),results=raw.map(rgb=>M.classify(rgb,refs));
+      results.forEach((r,j)=>colors[fi+j]=r.color);colors[fi+4]=scheme[currentFace];
+      uncertain[currentFace]=results.map((r,j)=>j!==4&&r.uncertain);confirmed[currentFace]=false;invalidateSolution();
+      const centerEstimated=M.classify(raw[4]).color;
+      const centerWarning=centerEstimated!==scheme[currentFace]
+        ?` Atenção: o centro foi estimado como ${M.COLORS[centerEstimated].name}, mas esta é a face de centro ${colorName(currentFace)}. Confira se fotografou a face pedida; se necessário, ajuste a combinação de centros.`:'';
+      $('photoStatus').textContent='Leitura sugerida: confira os nove adesivos no mapa antes de confirmar.'+centerWarning;
+      renderCapture();persist();
+    }catch(e){$('photoStatus').textContent=e.message;}
+  }
+  function references(){
+    if(M.FACES.some(f=>!samples[f]))return null;
+    return Object.fromEntries(M.FACES.map(f=>[scheme[f],samples[f][4]]));
+  }
+  function calibrate(){
+    const refs=references();if(!refs)return;
+    M.FACES.forEach(f=>{
+      const fi=index(f),r=samples[f].map(rgb=>M.classify(rgb,refs));
+      r.forEach((v,j)=>colors[fi+j]=overrides[f]?.[j]||v.color);colors[fi+4]=scheme[f];
+      uncertain[f]=r.map((v,j)=>j!==4&&!overrides[f]?.[j]&&v.uncertain);
+      confirmed[f]=false;
+    });
+    invalidateSolution();renderCapture();persist();notify('Cores recalibradas. Confira e confirme novamente as seis faces.');
+  }
+  function rotateFace(){
+    const fi=index(currentFace),rot=M.rotateNine(colors.slice(fi,fi+9));colors.splice(fi,9,...rot);
+    if(samples[currentFace])samples[currentFace]=M.rotateNine(samples[currentFace]);
+    if(overrides[currentFace])overrides[currentFace]=M.rotateNine(overrides[currentFace]);
+    if(uncertain[currentFace])uncertain[currentFace]=M.rotateNine(uncertain[currentFace]);
+    photoRotations[currentFace]=((photoRotations[currentFace]||0)+1)%4;
+    confirmed[currentFace]=false;invalidateSolution();renderCapture();persist();notify('Mapa girado 90° no sentido horário. Confira a orientação dos centros vizinhos.');
+  }
+  function canvasPoint(event){const canvas=$('photoCanvas'),r=canvas.getBoundingClientRect();return {x:(event.clientX-r.left)*canvas.width/r.width,y:(event.clientY-r.top)*canvas.height/r.height};}
+  function startPhotoDrag(e){
+    const photo=photoVisuals[currentFace];if(!photo)return;
+    const p=canvasPoint(e);let nearest=0;photo.points.forEach((x,i)=>{if(Math.hypot(x.x-p.x,x.y-p.y)<Math.hypot(photo.points[nearest].x-p.x,photo.points[nearest].y-p.y))nearest=i;});
+    const r=$('photoCanvas').getBoundingClientRect();
+    if(Math.hypot(photo.points[nearest].x-p.x,photo.points[nearest].y-p.y)>Math.max(35,$('photoCanvas').width*35/r.width))return;
+    photoDrag=nearest;$('photoCanvas').setPointerCapture(e.pointerId);e.preventDefault();
+  }
+  function dragPhoto(e){
+    if(photoDrag===null)return;const p=canvasPoint(e),c=$('photoCanvas');
+    photoVisuals[currentFace].points[photoDrag]={x:Math.max(0,Math.min(c.width-1,p.x)),y:Math.max(0,Math.min(c.height-1,p.y))};drawPhoto();e.preventDefault();
+  }
+  async function liveCamera(){
+    if(!window.isSecureContext||!navigator.mediaDevices?.getUserMedia){notify('A câmera ao vivo precisa de HTTPS. Use “Tirar foto” ou “Escolher foto”, ou abra no GitHub Pages.');return;}
+    stopCamera();const generation=++cameraGeneration;
+    try{
+      const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:1280}},audio:false});
+      if(generation!==cameraGeneration){stream.getTracks().forEach(t=>t.stop());return;}
+      cameraStream=stream;$('cameraVideo').srcObject=stream;$('cameraVideo').hidden=false;await $('cameraVideo').play();
+      if(generation!==cameraGeneration)return;
+      $('photoCanvas').hidden=true;$('photoEmpty').hidden=true;$('cameraGuide').hidden=false;
+      $('snapBtn').hidden=false;$('stopCameraBtn').hidden=false;$('liveBtn').hidden=true;$('readPhotoBtn').disabled=true;
+      $('photoHelp').textContent='Enquadre a face sem espelhar a imagem, confira os centros vizinhos e clique em “Capturar face”.';
+    }catch(e){if(generation!==cameraGeneration)return;stopCamera();notify(e.name==='NotAllowedError'?'A câmera não foi autorizada. Use “Tirar foto” ou “Escolher foto”.':'Não foi possível abrir a câmera. Você pode escolher uma foto ou preencher as cores manualmente.');}
+  }
+  function stopCamera(){
+    const wasActive=!!cameraStream;
+    cameraGeneration++;if(cameraStream){cameraStream.getTracks().forEach(t=>t.stop());cameraStream=null;}
+    if($('cameraVideo')){$('cameraVideo').srcObject=null;$('cameraVideo').hidden=true;$('cameraGuide').hidden=true;$('snapBtn').hidden=true;$('stopCameraBtn').hidden=true;$('liveBtn').hidden=false;}
+    if(wasActive)renderPhoto();
+  }
+  function snap(){try{makePhoto($('cameraVideo'));stopCamera();renderPhoto();}catch(e){notify(e.message);}}
+  function cancelSolver(){
+    solveGeneration++;clearTimeout(solverTimeout);pendingSolve=null;
+    if(worker){worker.terminate();worker=null;}if(workerURL){URL.revokeObjectURL(workerURL);workerURL=null;}
+    $('solverLoading').hidden=true;renderSession();
+  }
+  function getWorker(){
+    if(worker)return worker;
+    if(typeof Worker==='undefined')throw Error('Este navegador não oferece o cálculo em segundo plano. Tente Chrome, Edge ou Safari atualizados.');
+    const source=$('cubejsCore').textContent+'\n'+$('solverSource').textContent+'\n'+$('workerCode').textContent;
+    workerURL=URL.createObjectURL(new Blob([source],{type:'text/javascript'}));worker=new Worker(workerURL);
+    worker.onmessage=e=>{
+      const d=e.data;if(!pendingSolve)return;
+      if(d.type==='progress'){$('solverStatus').textContent=d.message;$('solverProgress').style.width=d.percent+'%';return;}
+      if(d.id!==pendingSolve.id)return;
+      if(d.type==='result'){
+        const initial=pendingSolve.initial.slice();clearTimeout(solverTimeout);pendingSolve=null;$('solverLoading').hidden=true;
+        try{const moves=M.expand(d.algorithm),h=M.makeHistory(initial,moves);if(!M.isSolved(h[h.length-1].colors))throw Error('A sequência calculada não passou na verificação geométrica.');
+          session={initial,moves,cursor:0,isDemo:false};backupSession=null;history=h;previewing=false;undoPending=false;follow=null;hintExtra=0;
+          persist();renderSession();notify(moves.length?`Sequência pronta: ${moves.length} giros de 90°.`:'Seu cubo já está resolvido.');
+        }catch(error){solveError(error.message);}
+      }else if(d.type==='error')solveError(d.message);
+    };
+    worker.onerror=()=>solveError('O motor não conseguiu terminar neste navegador. Tente novamente ou use um aparelho com mais memória.');
+    return worker;
+  }
+  function solveError(message){cancelSolver();$('solverStatus').textContent=message;notify(message);}
+  function solve(){
+    if(pendingSolve)return;
+    const validation=M.validate(colors,scheme);$('validationErrors').hidden=validation.ok;
+    if(!validation.ok){$('validationErrors').innerHTML='<strong>Revise o registro antes de continuar.</strong><ul>'+validation.errors.map(e=>'<li>'+R.esc(e)+'</li>').join('')+'</ul>';$('validationErrors').scrollIntoView({behavior:'smooth',block:'center'});return;}
+    const same=session&&!session.isDemo&&session.initial.join('')===colors.join('');
+    if(same){setTab('solve');return;}
+    stopCamera();cancelAnimation();
+    if(M.isSolved(colors)){session={initial:colors.slice(),moves:[],cursor:0,isDemo:false};backupSession=null;history=M.makeHistory(colors,[]);persist();setTab('solve');return;}
+    const id=++solveGeneration;pendingSolve={id,initial:colors.slice()};setTab('solve');
+    $('solveEmpty').hidden=true;$('solveContent').hidden=true;$('solverLoading').hidden=false;
+    $('solverStatus').textContent='Preparando o motor de resolução no seu dispositivo…';$('solverProgress').style.width='0%';
+    try{getWorker().postMessage({type:'solve',id,text:validation.text});
+      solverTimeout=setTimeout(()=>solveError('O cálculo ultrapassou dois minutos. Tente novamente ou use outro dispositivo.'),120000);
+    }catch(e){solveError(e.message);}
+  }
+  function demo(){
+    if(pendingSolve)cancelSolver();cancelAnimation();
+    if(session&&!session.isDemo)backupSession=session;
+    const scramble="R U F' L D B' R' U' F L'",moves=M.expand(scramble).reverse().map(M.inverse);
+    let initial=M.solved(scheme);M.expand(scramble).forEach(m=>initial=M.apply(initial,m));
+    session={initial,moves,cursor:0,isDemo:true};history=M.makeHistory(initial,moves);previewing=false;undoPending=false;follow=null;hintExtra=0;
+    setTab('solve');notify('Demonstração virtual. Esses giros não correspondem ao seu cubo físico.');
+  }
+  function currentAction(){
+    if(!session)return null;
+    if(undoPending&&session.cursor>0)return {move:M.inverse(session.moves[session.cursor-1]),before:history[session.cursor],after:history[session.cursor-1],undo:true};
+    if(session.cursor<session.moves.length)return {move:session.moves[session.cursor],before:history[session.cursor],after:history[session.cursor+1],undo:false};
+    return null;
+  }
+  function effectiveMask(){return $('maskSelect').value==='none'&&hintExtra>0?'partial':$('maskSelect').value;}
+  function renderViews(state,move=null,t=0){
+    visualState=state;const action=currentAction(),active=action?.move[0]||null;
+    $('graphHost').innerHTML=R.graph(state,{move,t,active,mask:effectiveMask(),follow,showAll:true});
+    $('cubeHost').innerHTML=R.cube(state,{move,t,active,follow,view:$('cubeView').value,labels:true});
+    if(!move)$('netHost').innerHTML=R.net(state,follow);
+  }
+  function renderHints(){
+    const action=currentAction();if(!action)return;
+    const f=action.move[0],ccw=action.move.endsWith("'"),base={full:3,partial:1,none:0}[$('maskSelect').value],level=Math.min(3,base+hintExtra);
+    const lines=[
+      `Localize o centro ${colorName(f)}. A face ${label(f)} é a única camada que será girada. Os outros centros mantêm a referência.`,
+      `Olhe diretamente para essa face. Gire ${ccw?'contra os ponteiros':'como os ponteiros'} de um relógio, apenas um quarto de volta. Se inclinar o cubo, volte à referência F em frente e U em cima.`,
+      'Observe os cinco circuitos destacados: oito adesivos da face e doze das faixas vizinhas se deslocam. Toque em uma bolinha para acompanhá-la; o centro fica parado.'
+    ];
+    $('hintList').innerHTML=lines.slice(0,level).map((s,i)=>`<div class="hint-row"><b>${i+1}</b><span>${s}</span></div>`).join('');
+    $('hintBtn').hidden=level===3;$('hintBtn').textContent=level===0?'Mostrar a primeira pista':'Mostrar mais uma pista';
+  }
+  function renderSession(){
+    if(pendingSolve){$('solveEmpty').hidden=true;$('solveContent').hidden=true;$('solverLoading').hidden=false;return;}
+    $('solverLoading').hidden=true;$('solveEmpty').hidden=!!session;$('solveContent').hidden=!session;if(!session)return;
+    const n=session.moves.length,c=session.cursor,action=currentAction();
+    $('sessionType').textContent=session.isDemo?'Demonstração · cubo virtual':'Seu cubo · confirme cada giro';
+    $('progressText').textContent=`${c} de ${n} giros`;
+    const percent=n?Math.round(c/n*100):100;$('progressPercent').textContent=percent+'% confirmado';$('progressBar').style.width=percent+'%';$('solveProgress').setAttribute('aria-valuenow',percent);
+    $('referenceLine').innerHTML=['F','U'].map(f=>`<span><i style="background:${M.COLORS[scheme[f]].hex}"></i>${f}: ${colorName(f)} ${f==='F'?'em frente':'em cima'}</span>`).join('');
+    $('nextMoveCard').hidden=!action;$('completeCard').hidden=!!action;
+    const restored=$('realSessionBtn');if(restored)restored.hidden=!backupSession||!session.isDemo;
+    $('completeUndoBtn').disabled=c===0;
+    $('sequenceHost').innerHTML=session.moves.map((m,i)=>`<span class="seq${i<c?' done':i===c?' current':''}" title="Giro ${i+1}: ${label(m[0])}, ${m.endsWith("'")?'anti-horário':'horário'}">${R.esc(m.replace("'",'′'))}</span>`).join('');
+    $('graphMoveLabel').textContent=action?`${action.move.replace("'",'′')} · ${undoPending?'retorno':'giro '+(c+1)}`:'Seis faces resolvidas';
+    if(action){
+      const f=action.move[0],ccw=action.move.endsWith("'");
+      $('moveToken').textContent=action.move.replace("'",'′');$('moveEyebrow').textContent=action.undo?'RETORNO · DESFAZER NO CUBO':'PRÓXIMO GIRO';
+      $('moveTitle').textContent='Face '+label(f).toLowerCase();$('moveCenter').textContent='Procure o centro '+colorName(f)+'.';
+      $('turnIcon').textContent=ccw?'↺':'↻';$('turnText').textContent='90° no sentido '+(ccw?'anti-horário':'horário');
+      $('turnViewText').textContent='Olhando diretamente para a face '+label(f).toLowerCase()+'.';renderHints();
+      $('previewNote').hidden=!previewing;$('previewNote').innerHTML='<strong>Prévia do resultado.</strong> '+(action.undo?'Faça esse giro inverso no cubo e confirme que desfez o movimento.':session.isDemo?'Este é o estado esperado depois do giro. Confirme para avançar na demonstração.':'O gráfico ainda não conta esse giro como realizado. Reproduza-o no cubo e confirme abaixo.');
+      $('previewBtn').innerHTML=icon('play')+(previewing?'Repetir animação':'Ensaiar animação');
+      $('confirmMoveBtn').innerHTML=icon('check')+(action.undo?'Já desfiz esse giro no cubo':session.isDemo?'Confirmar giro na demonstração →':'Já fiz esse giro no cubo →');
+      $('undoBtn').hidden=action.undo;$('undoBtn').disabled=c===0;$('cancelUndoBtn').hidden=!action.undo;
+    }
+    $('pauseBtn').hidden=!animation;$('confirmMoveBtn').disabled=!!animation;$('previewBtn').disabled=!!animation;
+    $('speedSelect').disabled=!!animation;$('maskSelect').disabled=!!animation;$('newCubeBtn').disabled=!!animation;
+    renderViews(previewing&&action?action.after:history[c]);
+  }
+  function cancelAnimation(){
+    if(animation){cancelAnimationFrame(animation.raf);const resolve=animation.resolve;animation=null;previewing=false;resolve(false);}
+  }
+  function animateAction(action){
+    cancelAnimation();previewing=false;
+    return new Promise(resolve=>{
+      const a={resolve,raf:null,paused:false,elapsed:0,last:performance.now(),lastDraw:0,duration:Number($('speedSelect').value)};animation=a;
+      $('pauseBtn').hidden=false;$('pauseBtn').textContent='Pausar';$('confirmMoveBtn').disabled=true;$('previewBtn').disabled=true;$('speedSelect').disabled=true;$('maskSelect').disabled=true;$('newCubeBtn').disabled=true;$('undoBtn').disabled=true;
+      const frame=now=>{
+        if(animation!==a)return;
+        const delta=Math.min(now-a.last,100);a.last=now;
+        if(!a.paused)a.elapsed+=delta;
+        const t=Math.min(1,a.elapsed/a.duration),eased=(1-Math.cos(Math.PI*t))/2;
+        if(now-a.lastDraw>30||t===1){renderViews(action.before,action.move,eased);a.lastDraw=now;}
+        if(t<1)a.raf=requestAnimationFrame(frame);
+        else{animation=null;previewing=true;renderSession();resolve(true);}
+      };
+      a.raf=requestAnimationFrame(frame);
+    });
+  }
+  async function preview(){if(animation)return;const action=currentAction();if(action)await animateAction(action);}
+  async function confirmMove(){
+    if(animation)return;const action=currentAction();if(!action)return;
+    if(!previewing&&!await animateAction(action))return;
+    session.cursor+=action.undo?-1:1;undoPending=false;previewing=false;hintExtra=0;
+    persist();renderSession();
+    if(session.cursor===session.moves.length)notify('Sequência concluída. Confira as seis faces no seu cubo.');
+  }
+  function undo(){
+    if(animation||!session||session.cursor===0)return;
+    undoPending=true;previewing=false;hintExtra=0;renderSession();
+    notify('Faça o giro inverso mostrado e confirme que desfez no cubo físico.');
+  }
+  function pause(){if(!animation)return;animation.paused=!animation.paused;animation.last=performance.now();$('pauseBtn').textContent=animation.paused?'Retomar':'Pausar';}
+  function followSlot(slot){
+    if(!visualState||!Number.isInteger(slot)||slot<0||slot>=54||animation)return;
+    const id=visualState.ids[slot];follow=follow===id?null:id;
+    const d=M.facelets[slot],c=M.COLORS[visualState.colors[slot]],action=currentAction();
+    const moving=action&&M.PERMS[action.move[0]][slot]!==slot;
+    $('graphCaption').textContent=follow===null?'Toque em uma bolinha para acompanhá-la. Os anéis pontilhados marcam os centros fixos.':`${d.face}${slot%9+1} · ${c?.name||'sem cor'}. ${d.row===1&&d.col===1?'É um centro: fica parado.':moving?'O contorno branco acompanha este adesivo durante a animação.':'Este adesivo fica parado no giro atual.'}`;
+    renderViews(visualState);
+  }
+  async function newCube(){
+    if(Object.values(confirmed).some(Boolean)||session){if(!await confirmUI('Registrar outro cubo?','O registro e a sequência atuais serão limpos. Fotografe as seis faces do cubo no estado em que ele está agora.','Limpar e registrar'))return;}
+    cancelSolver();cancelAnimation();session=null;backupSession=null;history=[];samples={};overrides={};uncertain={};photoVisuals={};photoRotations={};
+    colors=emptyColors();confirmed=Object.fromEntries(M.FACES.map(f=>[f,false]));currentFace='F';paint=scheme.F;previewing=false;undoPending=false;follow=null;
+    $('resumeNotice').hidden=true;renderCapture();renderPhoto();persist();setTab('capture');
+  }
+  async function applyScheme(){
+    const next=Object.fromEntries(M.FACES.map(f=>[f,$('center-'+f).value]));
+    if(new Set(Object.values(next)).size!==6){notify('Cada centro precisa ter uma cor diferente.');return;}
+    if(Object.values(confirmed).some(Boolean)||session){if(!await confirmUI('Mudar os centros?','A mudança limpa as faces registradas e a sequência. Você precisará registrar o cubo novamente.','Aplicar centros'))return;}
+    cancelSolver();scheme=next;colors=emptyColors();confirmed=Object.fromEntries(M.FACES.map(f=>[f,false]));samples={};overrides={};uncertain={};photoVisuals={};photoRotations={};session=null;backupSession=null;history=[];paint=scheme[currentFace];
+    $('resumeNotice').hidden=true;renderCapture();renderPhoto();renderScheme();persist();notify('Combinação de centros aplicada.');
+  }
+  function restoreSession(){
+    if(backupSession&&session?.isDemo){session=backupSession;backupSession=null;history=M.makeHistory(session.initial,session.moves);previewing=false;undoPending=false;follow=null;hintExtra=0;}
+    $('resumeNotice').hidden=true;setTab('solve');
+  }
+  async function copySequence(){
+    if(!session)return;const text=session.moves.join(' ');
+    try{if(navigator.clipboard?.writeText)await navigator.clipboard.writeText(text);
+      else{const textarea=document.createElement('textarea');textarea.value=text;document.body.append(textarea);textarea.select();const ok=document.execCommand('copy');textarea.remove();if(!ok)throw Error();}
+      notify('Sequência copiada.');
+    }catch(e){notify('Não foi possível copiar automaticamente. Você pode selecionar os símbolos da sequência.');}
+  }
+  function renderLesson(){
+    $('lessonSelector').innerHTML=M.FACES.map(f=>`<button class="lesson-face${f===lessonFace?' active':''}" data-lesson="${f}" aria-label="Experimentar ${label(f)}" aria-pressed="${f===lessonFace}">${f}</button>`).join('');
+    $('learnGraphHost').innerHTML=R.graph(lessonState,{active:lessonFace,mask:'full'});
+    $('learnCubeHost').innerHTML=R.cube(lessonState,{active:lessonFace});
+  }
+  function lessonTurn(ccw){
+    if(lessonBusy)return;lessonBusy=true;const generation=++lessonGeneration,move=lessonFace+(ccw?"'":''),before=lessonState;
+    $('lessonCW').disabled=true;$('lessonCCW').disabled=true;$('lessonReset').disabled=true;
+    $('learnMoveText').textContent=`${move.replace("'",'′')} · Face ${label(lessonFace).toLowerCase()} · 90° ${ccw?'anti-horário':'horário'}, olhando diretamente para ela.`;
+    const start=performance.now(),duration=1600;
+    const frame=now=>{
+      if(generation!==lessonGeneration)return;
+      const t=Math.min(1,(now-start)/duration),ease=(1-Math.cos(Math.PI*t))/2;
+      $('learnGraphHost').innerHTML=R.graph(before,{move,t:ease,active:move[0],mask:'full'});
+      $('learnCubeHost').innerHTML=R.cube(before,{move,t:ease,active:move[0]});
+      if(t<1)requestAnimationFrame(frame);
+      else{lessonState={colors:M.apply(before.colors,move),ids:M.apply(before.ids,move)};lessonBusy=false;$('lessonCW').disabled=false;$('lessonCCW').disabled=false;$('lessonReset').disabled=false;renderLesson();}
+    };requestAnimationFrame(frame);
+  }
+  const QUIZ=[
+    {q:'Depois de girar uma camada, o centro dessa face troca de posição?',options:['Sim, vai para outra face.','Não, permanece no mesmo lugar.'],correct:1,why:'O centro está no eixo do giro. Ele continua identificando a mesma face; as posições ao redor se deslocam.'},
+    {q:'Qual movimento desfaz R?',options:['R′: 90° anti-horário.','U: 90° na face de cima.'],correct:0,why:'R′ é o inverso de R. Um quarto de volta em um sentido é desfeito por um quarto de volta no sentido oposto, na mesma face.'},
+    {q:'Para decidir o sentido horário de B, como devemos olhar?',options:['Sempre pela face da frente.','Diretamente para a face de trás.'],correct:1,why:'A convenção é definida olhando de frente para a face girada. Vista do lado oposto, a mesma rotação parece ter o sentido invertido.'}
+  ];
+  function renderQuiz(){$('quizHost').innerHTML=QUIZ.map((q,i)=>`<div class="quiz"><p>${i+1}. ${q.q}</p><div class="quiz-options">${q.options.map((s,j)=>`<button data-quiz="${i}" data-answer="${j}">${s}</button>`).join('')}</div><div id="feedback-${i}" class="feedback" aria-live="polite"></div></div>`).join('');}
+  function bind(){
+    document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+    document.querySelector('.tabs').addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const tabs=['capture','solve','learn'],i=tabs.indexOf(currentTab),next=tabs[(i+(e.key==='ArrowRight'?1:2))%3];setTab(next,false);document.querySelector(`[data-tab="${next}"]`).focus();});
+    $('startBtn').onclick=()=>{setTab('capture');if(session&&!session.isDemo&&session.cursor>0)notify('Este é o registro inicial. Para fotografar o estado atual, use “Registrar outro cubo”.');};
+    $('demoBtn').onclick=demo;$('emptyDemoBtn').onclick=demo;$('emptyCaptureBtn').onclick=()=>setTab('capture');$('resumeBtn').onclick=restoreSession;
+    $('faceTabs').onclick=e=>{const b=e.target.closest('[data-face]');if(b)selectFace(b.dataset.face);};
+    $('faceEditor').onclick=e=>{const b=e.target.closest('[data-cell]');if(b)paintCell(Number(b.dataset.cell));};
+    $('palette').onclick=e=>{const b=e.target.closest('[data-color]');if(b){paint=b.dataset.color;renderCapture();}};
+    $('eraseBtn').onclick=()=>{paint=null;renderCapture();};$('confirmFaceBtn').onclick=confirmFace;$('rotateFaceBtn').onclick=rotateFace;
+    $('photoBtn').onclick=()=>$('cameraInput').click();$('fileBtn').onclick=()=>$('fileInput').click();
+    for(const id of ['cameraInput','fileInput'])$(id).onchange=e=>{const file=e.target.files[0];e.target.value='';loadPhoto(file);};
+    $('readPhotoBtn').onclick=readPhoto;$('calibrateBtn').onclick=calibrate;$('applySchemeBtn').onclick=applyScheme;
+    $('liveBtn').onclick=liveCamera;$('stopCameraBtn').onclick=()=>{stopCamera();renderPhoto();};$('snapBtn').onclick=snap;
+    $('photoCanvas').addEventListener('pointerdown',startPhotoDrag);$('photoCanvas').addEventListener('pointermove',dragPhoto);$('photoCanvas').addEventListener('pointerup',()=>photoDrag=null);$('photoCanvas').addEventListener('pointercancel',()=>photoDrag=null);
+    $('solveBtn').onclick=solve;$('cancelSolveBtn').onclick=()=>{cancelSolver();notify('Cálculo cancelado. Suas faces registradas foram mantidas.');};
+    $('previewBtn').onclick=preview;$('confirmMoveBtn').onclick=confirmMove;$('undoBtn').onclick=undo;$('completeUndoBtn').onclick=undo;$('pauseBtn').onclick=pause;
+    $('cancelUndoBtn').onclick=()=>{undoPending=false;previewing=false;renderSession();};
+    $('newCubeBtn').onclick=newCube;$('completeNewBtn').onclick=newCube;$('copySequenceBtn').onclick=copySequence;
+    $('maskSelect').onchange=()=>{hintExtra=0;renderSession();persist();};$('speedSelect').onchange=persist;$('cubeView').onchange=()=>{if(!animation)renderSession();};
+    $('hintBtn').onclick=()=>{hintExtra++;renderSession();};
+    $('graphHost').onclick=e=>{const b=e.target.closest('[data-slot]');if(b)followSlot(Number(b.dataset.slot));};
+    $('graphHost').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){const b=e.target.closest('[data-slot]');if(b){e.preventDefault();followSlot(Number(b.dataset.slot));}}};
+    $('aboutBtn').onclick=()=>$('aboutDialog').showModal();
+    $('lessonSelector').onclick=e=>{if(lessonBusy)return;const b=e.target.closest('[data-lesson]');if(b){lessonFace=b.dataset.lesson;renderLesson();}};
+    $('lessonCW').onclick=()=>lessonTurn(false);$('lessonCCW').onclick=()=>lessonTurn(true);
+    $('lessonReset').onclick=()=>{lessonGeneration++;lessonBusy=false;lessonState={colors:M.solved(),ids:Array.from({length:54},(_,i)=>i)};renderLesson();$('learnMoveText').textContent='Cubo virtual reiniciado. Escolha uma face e observe seus percursos.';};
+    $('quizHost').onclick=e=>{const b=e.target.closest('[data-quiz]');if(!b)return;const i=Number(b.dataset.quiz),q=QUIZ[i],ok=Number(b.dataset.answer)===q.correct;
+      b.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('correct','wrong'));b.classList.add(ok?'correct':'wrong');$('feedback-'+i).textContent=(ok?'Isso mesmo. ':'Observe novamente. ')+q.why;};
+    document.addEventListener('visibilitychange',()=>{if(document.hidden){stopCamera();if(animation&&!animation.paused)pause();}});
+    window.addEventListener('pagehide',()=>{stopCamera();persist();});
+    const back=document.createElement('button');back.id='realSessionBtn';back.className='btn secondary sm';back.textContent='Voltar ao meu cubo';back.hidden=true;back.onclick=restoreSession;$('newCubeBtn').before(back);
+  }
+  load();renderScheme();renderCapture();renderPhoto();renderQuiz();renderLesson();bind();renderSession();
+  return {model:M,render:R,solve,demo,confirmMove,preview,undo,pause,newCube,setTab,selectFace,readPhoto,paintCell,confirmFace,
+    getState:()=>({scheme:{...scheme},colors:colors.slice(),confirmed:{...confirmed},session:session?{...session}:null,previewing,undoPending,animating:!!animation})};
+})();
+
+</script>
+</body></html>
