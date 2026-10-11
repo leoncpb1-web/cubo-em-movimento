@@ -11,6 +11,10 @@
 @media(max-width:690px){header{padding:18px 18px 10px}.shell{padding:0 15px 32px}.brand-name{font-size:18px}.brand-sub{font-size:9px}.brand-mark{width:39px;height:39px}.hero{padding:25px 4px 20px;grid-template-columns:1fr;gap:18px}.hero-motif{display:none}.hero-copy p{font-size:14px;margin-top:12px}.hero .btn{font-size:13px;padding:12px 14px}.hero .eyebrow{font-size:10px}.tabs{gap:4px;margin-bottom:16px;justify-content:space-between}.tab{justify-content:center;gap:6px;padding:11px 8px;font-size:12px;flex:1}.tab-num{width:21px;height:21px;font-size:11px}.capture-layout,.solve-layout,.learn-grid{grid-template-columns:1fr}.card{padding:19px;border-radius:18px}.card-head{margin-bottom:15px}.card-head h2{font-size:23px}.capture-complete{grid-column:auto}.photo-wrap{min-height:225px}.face-tabs{margin:16px 0}.face-tab{border-radius:9px}.palette{grid-template-columns:repeat(3,1fr)}.face-editor{max-width:268px}.graph-card{padding:12px}.graph-caption{padding:10px 8px 4px;font-size:12px}.graph-top{margin:4px 7px 8px}.solve-controls{gap:10px;align-items:flex-start}.select-group{gap:6px}.select-group label{font-size:11px}.select-group select{font-size:12px}.cube-card>svg{max-height:305px}.next-card{padding:19px}.move-token{width:66px;height:66px;font-size:32px}.move-copy h3{font-size:22px}.progress-head{font-size:13px}.progress-head h2{font-size:23px}.learn-demo{grid-template-columns:1fr;gap:20px;padding:15px}.learn-demo .cube-card{max-width:450px}.scheme-grid{grid-template-columns:repeat(2,1fr)}.net{gap:5px}.net-face span{font-size:9px}.btn.full{padding:14px 12px}.photo-help{font-size:12px}.camera-actions .btn{font-size:12px;padding:10px 12px}.capture-complete .row .btn{width:100%}.complete-card{margin-bottom:20px}footer{font-size:11px;padding:18px 18px 26px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.spinner{animation-duration:2s}.progress span,.loader-progress span{transition:none}}
 @media(max-width:390px){header{gap:8px;padding:16px 14px 8px}.brand{gap:9px}.brand-mark{width:34px;height:34px}.brand-name{font-size:16px}.brand-sub{font-size:8px}.tab{font-size:11px;white-space:normal;line-height:1.2;min-width:0;padding:10px 6px}.tab-num{flex-shrink:0;width:19px;height:19px}.palette{grid-template-columns:repeat(2,1fr)}.face-tab{min-width:0}.face-tab small{font-size:8px}.select-group{width:100%}.select-group select{max-width:185px}}
+
+.photo-adjust{padding:12px 0}.photo-adjust .row{margin-top:8px}.photo-adjust button{min-width:44px;min-height:44px}.photo-adjust select{min-height:44px}
+.solve-layout{grid-template-areas:"graph cube" "play cube" "guide guide";align-items:start}.solve-graph{grid-area:graph}.solve-cube{grid-area:cube}.play-between{grid-area:play;margin:0;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--card)}.solve-guide{grid-area:guide}.solve-guide .next-card{margin-top:0}
+@media(max-width:690px){.solve-layout{grid-template-areas:"graph" "play" "cube" "guide";gap:10px}.solve-graph #graphHost svg{max-height:34svh;min-height:210px}.solve-cube #cubeHost svg{max-height:30svh;min-height:185px}.solve-graph .graph-caption{min-height:0}.solve-graph details{margin-top:8px;padding-top:8px}.play-between{margin:0}.solve-cube .cube-view{flex-wrap:wrap}}
 </style>
 </head>
 <body>
@@ -36,6 +40,7 @@
 <div class="row camera-actions"><button id="photoBtn" class="btn secondary sm"><svg aria-hidden="true"><use href="#i-camera"/></svg>Tirar foto</button><button id="fileBtn" class="btn ghost sm"><svg aria-hidden="true"><use href="#i-upload"/></svg>Escolher foto</button><button id="liveBtn" class="btn ghost sm">Câmera ao vivo</button><button id="snapBtn" class="btn primary sm" hidden>Capturar face</button><button id="stopCameraBtn" class="btn ghost sm" hidden>Fechar câmera</button></div>
 <input id="cameraInput" type="file" accept="image/*" capture="environment" hidden><input id="fileInput" type="file" accept="image/*" hidden>
 <p id="photoHelp" class="photo-help muted">No computador, você também pode preencher as cores manualmente.</p>
+<div id="photoAdjust" class="photo-adjust" hidden><label for="cornerSelect">Ajuste fino do vértice</label><div class="row"><select id="cornerSelect"><option value="0">1 · Superior esquerdo</option><option value="1">2 · Superior direito</option><option value="2">3 · Inferior direito</option><option value="3">4 · Inferior esquerdo</option></select></div><div class="row"><button class="btn ghost sm" id="cornerLeft" aria-label="Mover vértice para a esquerda">←</button><button class="btn ghost sm" id="cornerUp" aria-label="Mover vértice para cima">↑</button><button class="btn ghost sm" id="cornerDown" aria-label="Mover vértice para baixo">↓</button><button class="btn ghost sm" id="cornerRight" aria-label="Mover vértice para a direita">→</button></div><p class="small muted">Selecione um número e use as setas, ou arraste o círculo na foto. Cada toque faz um pequeno ajuste.</p></div>
 <button id="readPhotoBtn" class="btn primary full" disabled>Ler as 9 cores da foto</button>
 <div id="photoStatus" class="status-strip" role="status" aria-live="polite"></div>
 <details><summary>Como posicionar Cima, Baixo e Trás?</summary><p id="orientationHelp"></p><p>O sentido da foto importa: uma imagem girada 90° altera a posição das peças. Se necessário, use “Girar mapa 90°” para corrigir a orientação.</p></details>
@@ -59,12 +64,12 @@
 <div id="solverLoading" class="loading" hidden><div class="spinner" aria-hidden="true"></div><h2>Preparando seu caminho</h2><p id="solverStatus" class="muted gap" role="status" aria-live="polite">Inicializando o motor de resolução no seu dispositivo…</p><div class="loader-progress"><span id="solverProgress" style="width:0%"></span></div><p class="small muted">A primeira preparação pode levar alguns segundos, ou mais em celulares antigos. Mantenha esta aba aberta.</p><button id="cancelSolveBtn" class="btn ghost sm gap">Cancelar cálculo</button></div>
 <div id="solveContent" hidden><div class="progress-head"><div><span id="sessionType" class="badge">Seu cubo</span><h2 class="gap">Acompanhe cada giro</h2></div><div style="text-align:right"><strong id="progressText">0 de 0 giros</strong><div class="small muted" id="progressPercent">0% confirmado</div></div></div><div class="progress" role="progressbar" id="solveProgress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Giros confirmados"><span id="progressBar"></span></div>
 <div class="solve-controls"><div class="select-group"><label for="maskSelect">Máscara de tutoria</label><select id="maskSelect"><option value="full">Ajuda completa</option><option value="partial">Ajuda parcial</option><option value="none">Autonomia</option></select><label for="speedSelect">Animação</label><select id="speedSelect"><option value="2200">Lenta</option><option value="1400" selected>Normal</option><option value="750">Rápida</option></select></div><button id="newCubeBtn" class="btn ghost sm">Registrar outro cubo</button></div>
-<div class="solve-layout"><div class="card graph-card"><div class="graph-top"><h3>O caminho das bolinhas</h3><span id="graphMoveLabel">Posição inicial</span></div><div id="graphHost"></div><div id="graphCaption" class="graph-caption">Toque em uma bolinha para acompanhá-la no gráfico e no cubo. Os anéis pontilhados marcam os centros fixos.</div><details><summary>Ver as seis faces abertas</summary><div id="netHost"></div><p class="small muted">Cada quadradinho corresponde a uma bolinha do gráfico. As letras identificam os centros.</p></details></div>
-<div><div class="cube-card"><div id="cubeHost"></div><div class="cube-view"><label for="cubeView">Vista do desenho</label><select id="cubeView"><option value="auto">Automática: mostra a face do giro</option><option value="front">Frente / direita / cima</option><option value="back">Trás / esquerda / cima</option><option value="bottom">Frente / direita / baixo</option></select></div></div><div class="reference-line" id="referenceLine"></div>
+<div class="solve-layout"><div class="card graph-card solve-graph"><div class="graph-top"><h3>O caminho das bolinhas</h3><span id="graphMoveLabel">Posição inicial</span></div><div id="graphHost"></div><div id="graphCaption" class="graph-caption">Toque em uma bolinha para acompanhá-la no gráfico e no cubo. Os anéis pontilhados marcam os centros fixos.</div><details><summary>Ver as seis faces abertas</summary><div id="netHost"></div><p class="small muted">Cada quadradinho corresponde a uma bolinha do gráfico. As letras identificam os centros.</p></details></div>
+<div class="animation-tools play-between"><button id="previewBtn" class="btn secondary"><svg aria-hidden="true"><use href="#i-play"/></svg>Ensaiar animação</button><button id="pauseBtn" class="btn ghost icon-only" hidden>Pausar</button></div><div class="solve-cube"><div class="cube-card"><div id="cubeHost"></div><div class="cube-view"><label for="cubeView">Vista do desenho</label><select id="cubeView"><option value="auto">Automática: mostra a face do giro</option><option value="front">Frente / direita / cima</option><option value="back">Trás / esquerda / cima</option><option value="bottom">Frente / direita / baixo</option></select></div></div><div class="reference-line" id="referenceLine"></div></div><div class="solve-guide">
 <div id="nextMoveCard" class="next-card"><div class="move-top"><div id="moveToken" class="move-token">R</div><div class="move-copy"><div id="moveEyebrow" class="eyebrow">PRÓXIMO GIRO</div><h3 id="moveTitle">Face direita</h3><p id="moveCenter">Procure o centro vermelho.</p></div></div><div class="direction"><span id="turnIcon" class="turn-icon" aria-hidden="true">↻</span><div><strong id="turnText">90° no sentido horário</strong><div id="turnViewText" class="small">Olhando diretamente para a face que será girada.</div></div></div>
 <div id="hintList" class="hints"></div><button id="hintBtn" class="linkbtn">Mostrar mais uma pista</button>
 <div id="previewNote" class="preview-note" hidden><strong>Prévia do resultado.</strong> O gráfico ainda não conta esse giro como realizado. Reproduza-o no cubo e confirme abaixo.</div>
-<div class="animation-tools"><button id="previewBtn" class="btn secondary"><svg aria-hidden="true"><use href="#i-play"/></svg>Ensaiar animação</button><button id="pauseBtn" class="btn ghost icon-only" hidden>Pausar</button></div>
+
 <div class="confirm-area"><button id="confirmMoveBtn" class="btn primary full"><svg aria-hidden="true"><use href="#i-check"/></svg>Já fiz esse giro no cubo →</button><button id="undoBtn" class="btn ghost full sm"><svg aria-hidden="true"><use href="#i-back"/></svg>Desfazer o último giro</button><button id="cancelUndoBtn" class="linkbtn" hidden>Cancelar retorno</button></div><p class="small muted gap">A confirmação é sua: o app não observa automaticamente os movimentos do cubo físico.</p></div>
 <div id="completeCard" class="complete-card" hidden><div class="done-icon">✓</div><h2>Sequência concluída!</h2><p>O modelo está resolvido. Confira se cada uma das seis faces do seu cubo físico tem uma só cor.</p><button id="completeUndoBtn" class="btn ghost sm">Desfazer o último giro</button><button id="completeNewBtn" class="btn primary full gap">Registrar outro cubo</button></div>
 </div></div>
@@ -78,7 +83,7 @@
 <div class="card" style="grid-column:1/-1"><h2>Confira o que você percebeu</h2><div id="quizHost"></div></div></div>
 </section>
 </main></div>
-<footer>Concepção pedagógica: Professor Leonardo C. P. Barreto · Cubo em Movimento · Versão 1.0<br>HTML independente · Fotos processadas localmente · Progresso salvo neste navegador, quando disponível.</footer>
+<footer>Concepção pedagógica: Professor Leonardo C. P. Barreto · Cubo em Movimento · Versão 1.1<br>HTML independente · Fotos processadas localmente · Progresso salvo neste navegador, quando disponível.</footer>
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 <dialog id="aboutDialog"><h2>Cubo em Movimento</h2><p>Um tutor visual para cubos mágicos 3×3: fotos das faces, gráfico de adesivos e animações sincronizadas com um cubo em 3D.</p><ul class="about-list"><li>Capture as seis faces na orientação indicada e confira todas as cores.</li><li>O modelo verifica a quantidade de cores, as peças, suas orientações e a paridade antes de calcular.</li><li>A sequência usa o algoritmo de duas fases de Kociemba. A tutoria explica cada giro; esta versão não apresenta um curso completo do método de camadas.</li><li>As fotos não saem do dispositivo. Apenas cores, amostras de cor e progresso ficam no armazenamento local do navegador.</li><li>Para usar a câmera ao vivo, abra o app em uma página HTTPS, como o GitHub Pages. Você também pode escolher fotos ou preencher as cores manualmente.</li></ul><details><summary>Créditos do motor de resolução</summary><p>cube.js — Petri Lehtinen e Ludovic Fernandez. Licença MIT. <a href="https://github.com/ldez/cubejs" target="_blank" rel="noopener noreferrer">Código original</a>.</p><pre id="licenseText">Copyright (c) 2013-2017 Petri Lehtinen &lt;petri@digip.org&gt;
 Copyright (c) 2018 Ludovic Fernandez
@@ -2535,7 +2540,7 @@ const CuboApp=(()=>{
     $('faceSubtitle').textContent=`O centro ${colorName(currentFace)} identifica esta face.`;
     $('registeredBadge').textContent=`${n}/6 faces`;
     $('orientation').innerHTML=info.neighbors.map((f,i)=>`<div class="anchor"><span class="dot" style="background:${M.COLORS[scheme[f]].hex}"></span><div>${['Acima da face','À direita da face','Abaixo da face','À esquerda da face'][i]}<strong>${label(f)} · ${colorName(f)}</strong></div></div>`).join('');
-    $('orientationHelp').textContent=`Para fotografar ${info.name}, mantenha o centro ${colorName(info.neighbors[0])} na borda de cima e o centro ${colorName(info.neighbors[1])} na borda direita. O centro ${colorName(currentFace)} deve estar no meio da foto.`;
+    $('orientationHelp').textContent=`Para fotografar ${info.name}, mantenha o centro ${colorName(info.neighbors[0])} na face vizinha acima e o centro ${colorName(info.neighbors[1])} na face vizinha à direita. Eles NÃO precisam aparecer na foto: são referências para segurar o cubo. Fotografe apenas os nove adesivos da face de centro ${colorName(currentFace)}. Gire o cubo inteiro, sem mexer nas camadas. Para Cima, Baixo ou Trás, siga as referências atualizadas acima ao selecionar a face.`;
     $('faceTabs').innerHTML=ORDER.map(f=>`<button class="face-tab${f===currentFace?' active':''}${confirmed[f]?' complete':''}" data-face="${f}" aria-label="${label(f)}: ${confirmed[f]?'confirmada':'pendente'}" aria-pressed="${f===currentFace}"><div class="color-dot" style="background:${M.COLORS[scheme[f]].hex}"></div><strong>${f}</strong><small>${confirmed[f]?'✓ Pronta':'Pendente'}</small></button>`).join('');
     $('faceEditor').innerHTML=Array.from({length:9},(_,j)=>{
       const c=colors[fi+j],d=M.COLORS[c];return `<button class="sticker${j===4?' center':''}${uncertain[currentFace]?.[j]?' uncertain':''}" data-cell="${j}" style="background:${d?.hex||'#e5e9e5'};color:${['w','y','o','g',null].includes(c)?'#1b2b37':'#fff'}" aria-label="Posição ${j+1}: ${d?.name||'vazia'}${j===4?', centro fixo':''}${uncertain[currentFace]?.[j]?', conferir leitura':''}"${j===4?' aria-disabled="true"':''}><span class="num">${j+1}</span><span class="symbol">${j===4?currentFace:d?.symbol||'+'}</span></button>`;
@@ -2554,7 +2559,7 @@ const CuboApp=(()=>{
     $('calibrateBtn').disabled=M.FACES.some(f=>!samples[f]);
   }
   function selectFace(face){
-    stopCamera();currentFace=face;paint=scheme[face];photoDrag=null;
+    stopCamera();currentFace=face;paint=scheme[face];endPhotoDrag();
     $('photoStatus').textContent='';$('validationErrors').hidden=true;
     renderCapture();renderPhoto();persist();
   }
@@ -2577,7 +2582,7 @@ const CuboApp=(()=>{
   function renderPhoto(){
     const photo=photoVisuals[currentFace];
     $('cameraVideo').hidden=true;$('cameraGuide').hidden=true;$('photoEmpty').hidden=!!photo;$('photoCanvas').hidden=!photo;
-    $('readPhotoBtn').disabled=!photo;
+    $('readPhotoBtn').disabled=!photo;$('photoAdjust').hidden=!photo;
     $('photoHelp').textContent=photo?'Arraste os pontos 1, 2, 3 e 4 até os quatro cantos da face. A grade deve acompanhar os nove adesivos.':'No computador, você também pode preencher as cores manualmente.';
     if(photo)drawPhoto();
   }
@@ -2591,7 +2596,7 @@ const CuboApp=(()=>{
       for(const vertical of [true,false]){const a=M.mapH(h,vertical?k/3:0,vertical?0:k/3),b=M.mapH(h,vertical?k/3:1,vertical?1:k/3);ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
     }}else{ctx.beginPath();p.points.forEach((a,i)=>i?ctx.lineTo(a.x,a.y):ctx.moveTo(a.x,a.y));ctx.closePath();ctx.stroke();}
     ctx.shadowBlur=0;
-    p.points.forEach((a,i)=>{const rad=Math.max(18,canvas.width/30);ctx.beginPath();ctx.arc(a.x,a.y,rad,0,2*Math.PI);ctx.fillStyle='#17283f';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='#fff';ctx.font=`700 ${rad}px sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(i+1),a.x,a.y);});
+    p.points.forEach((a,i)=>{const rad=18/photoDisplayRect().scale;ctx.beginPath();ctx.arc(a.x,a.y,rad,0,2*Math.PI);ctx.fillStyle=i===Number($('cornerSelect').value)?'#8a490e':'#17283f';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='#fff';ctx.font=`700 ${rad}px sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(i+1),a.x,a.y);});
   }
   function makePhoto(image){
     const original=document.createElement('canvas'),scale=Math.min(1,720/Math.max(image.width||image.videoWidth,image.height||image.videoHeight));
@@ -2648,18 +2653,30 @@ const CuboApp=(()=>{
     photoRotations[currentFace]=((photoRotations[currentFace]||0)+1)%4;
     confirmed[currentFace]=false;invalidateSolution();renderCapture();persist();notify('Mapa girado 90° no sentido horário. Confira a orientação dos centros vizinhos.');
   }
-  function canvasPoint(event){const canvas=$('photoCanvas'),r=canvas.getBoundingClientRect();return {x:(event.clientX-r.left)*canvas.width/r.width,y:(event.clientY-r.top)*canvas.height/r.height};}
+  let photoPointer=null,photoOffset={x:0,y:0};
+  function photoDisplayRect(){
+    const c=$('photoCanvas'),r=c.getBoundingClientRect();
+    const scale=Math.min(r.width/c.width,r.height/c.height)||1;
+    return {left:r.left+(r.width-c.width*scale)/2,top:r.top+(r.height-c.height*scale)/2,scale};
+  }
+  function canvasPoint(event){const r=photoDisplayRect();return {x:(event.clientX-r.left)/r.scale,y:(event.clientY-r.top)/r.scale};}
   function startPhotoDrag(e){
-    const photo=photoVisuals[currentFace];if(!photo)return;
+    const photo=photoVisuals[currentFace];if(!photo||photoPointer!==null)return;
     const p=canvasPoint(e);let nearest=0;photo.points.forEach((x,i)=>{if(Math.hypot(x.x-p.x,x.y-p.y)<Math.hypot(photo.points[nearest].x-p.x,photo.points[nearest].y-p.y))nearest=i;});
-    const r=$('photoCanvas').getBoundingClientRect();
-    if(Math.hypot(photo.points[nearest].x-p.x,photo.points[nearest].y-p.y)>Math.max(35,$('photoCanvas').width*35/r.width))return;
-    photoDrag=nearest;$('photoCanvas').setPointerCapture(e.pointerId);e.preventDefault();
+    if(Math.hypot(photo.points[nearest].x-p.x,photo.points[nearest].y-p.y)*photoDisplayRect().scale>36)return;
+    photoDrag=nearest;photoPointer=e.pointerId;photoOffset={x:photo.points[nearest].x-p.x,y:photo.points[nearest].y-p.y};
+    $('cornerSelect').value=String(nearest);$('photoCanvas').setPointerCapture(e.pointerId);drawPhoto();e.preventDefault();
+  }
+  function moveCorner(i,x,y){
+    const photo=photoVisuals[currentFace];if(!photo)return;
+    photo.points[i]={x:Math.max(0,Math.min(photo.image.width-1,x)),y:Math.max(0,Math.min(photo.image.height-1,y))};drawPhoto();
   }
   function dragPhoto(e){
-    if(photoDrag===null)return;const p=canvasPoint(e),c=$('photoCanvas');
-    photoVisuals[currentFace].points[photoDrag]={x:Math.max(0,Math.min(c.width-1,p.x)),y:Math.max(0,Math.min(c.height-1,p.y))};drawPhoto();e.preventDefault();
+    if(photoDrag===null||e.pointerId!==photoPointer)return;const p=canvasPoint(e);
+    moveCorner(photoDrag,p.x+photoOffset.x,p.y+photoOffset.y);e.preventDefault();
   }
+  function endPhotoDrag(){photoDrag=null;photoPointer=null;}
+  function nudgeCorner(dx,dy){const photo=photoVisuals[currentFace];if(!photo)return;const i=Number($('cornerSelect').value),p=photo.points[i],step=2/photoDisplayRect().scale;moveCorner(i,p.x+dx*step,p.y+dy*step);}
   async function liveCamera(){
     if(!window.isSecureContext||!navigator.mediaDevices?.getUserMedia){notify('A câmera ao vivo precisa de HTTPS. Use “Tirar foto” ou “Escolher foto”, ou abra no GitHub Pages.');return;}
     stopCamera();const generation=++cameraGeneration;
@@ -2885,7 +2902,11 @@ const CuboApp=(()=>{
     for(const id of ['cameraInput','fileInput'])$(id).onchange=e=>{const file=e.target.files[0];e.target.value='';loadPhoto(file);};
     $('readPhotoBtn').onclick=readPhoto;$('calibrateBtn').onclick=calibrate;$('applySchemeBtn').onclick=applyScheme;
     $('liveBtn').onclick=liveCamera;$('stopCameraBtn').onclick=()=>{stopCamera();renderPhoto();};$('snapBtn').onclick=snap;
-    $('photoCanvas').addEventListener('pointerdown',startPhotoDrag);$('photoCanvas').addEventListener('pointermove',dragPhoto);$('photoCanvas').addEventListener('pointerup',()=>photoDrag=null);$('photoCanvas').addEventListener('pointercancel',()=>photoDrag=null);
+    $('cornerSelect').onchange=drawPhoto;
+    $('cornerLeft').onclick=()=>nudgeCorner(-1,0);$('cornerRight').onclick=()=>nudgeCorner(1,0);$('cornerUp').onclick=()=>nudgeCorner(0,-1);$('cornerDown').onclick=()=>nudgeCorner(0,1);
+    window.addEventListener('resize',()=>{if(photoVisuals[currentFace])drawPhoto();});
+    $('photoCanvas').addEventListener('lostpointercapture',endPhotoDrag);
+    $('photoCanvas').addEventListener('pointerdown',startPhotoDrag);$('photoCanvas').addEventListener('pointermove',dragPhoto);$('photoCanvas').addEventListener('pointerup',endPhotoDrag);$('photoCanvas').addEventListener('pointercancel',endPhotoDrag);
     $('solveBtn').onclick=solve;$('cancelSolveBtn').onclick=()=>{cancelSolver();notify('Cálculo cancelado. Suas faces registradas foram mantidas.');};
     $('previewBtn').onclick=preview;$('confirmMoveBtn').onclick=confirmMove;$('undoBtn').onclick=undo;$('completeUndoBtn').onclick=undo;$('pauseBtn').onclick=pause;
     $('cancelUndoBtn').onclick=()=>{undoPending=false;previewing=false;renderSession();};
